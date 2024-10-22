@@ -21,6 +21,8 @@ What languages/tools/technologies do you plan to use? (This list may change over
 What will be the input/output of your project?
 >  * 	The project will have two primary functions: 
 >  * Users can create, store, view, and edit recipes to be stored in a greater recipe book.
+>  * 	Users can navigate an existing recipe book (containing both user-created and externally sourced recipes) to find entries matching user-selected filters, such as containing certain ingredients or meeting dietary restrictions. For example, when searching the book, a user may be asked:
+
 
  > * What are the features that the project provides?
 >  * 
