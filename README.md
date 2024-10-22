@@ -22,11 +22,11 @@ What will be the input/output of your project?
 >  * 	The project will have two primary functions: 
 >  * Users can create, store, view, and edit recipes to be stored in a greater recipe book.
 >  * 	Users can navigate an existing recipe book (containing both user-created and externally sourced recipes) to find entries matching user-selected filters, such as containing certain ingredients or meeting dietary restrictions. For example, when searching the book, a user may be asked:
-    >* 	“What ingredients would you like to cook with?”
-	>*	“Do you have any dietary restrictions?”
-    	>* [IF YES] “Please input your dietary restrictions.”
-	>* 	“Would you like to search by maximum calorie level?”
-        >* IF YES] “Please input the maximum amount of desired calories in your meal.”
+>  * 	“What ingredients would you like to cook with?”
+>  * 	“Do you have any dietary restrictions?”
+>  * 	[IF YES] “Please input your dietary restrictions.”
+>  * 	“Would you like to search by maximum calorie level?”
+>  * 	[IF YES] “Please input the maximum amount of desired calories in your meal.”
 
 
 
