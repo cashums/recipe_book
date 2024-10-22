@@ -16,7 +16,8 @@
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include:
  > * Why is it important or interesting to you?
->  * 
+>  * 	•	Instead of cooking with what we already have, it can be easy to search for completely new recipes requiring ingredients that will likely only be used once before going to waste. Instead, a better way to cook starts with cooking with as many already-owned ingredients as possible, cutting both grocery costs as well as food waste. This project not only allows a user to manage an expansive book of their own recipes, but also to search a database of pre-existing recipes by various metrics (pre-owned ingredients, cook time, calorie count, etc.) to make finding their next home-made meal easy. As someone who does a look of cooking myself, I fully intend to use this and expand upon it after class is over.
+
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
 >  * 
  > * What will be the input/output of your project?
