@@ -23,9 +23,12 @@ Input/Output
 
 What are the features that the project provides?
 >  * 	Search engine for recipes
->  * 	Algorithm that provides recipes based on user inputted ingredients and other factors 
+>  * 	Algorithm that provides recipes based on user-inputted ingredients and other factors 
 >  * 	History of favorite foods
 >  * 	Calorie tracker
+>  * 	Create new recipes
+>  * 	Leave comments on the recipes
+>  * 	Generate daily menu based on the search history
 
  > 
  > ## Phase II
