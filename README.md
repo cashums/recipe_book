@@ -15,9 +15,11 @@ Input/Output
 >  * 	Users can navigate an existing recipe book (containing both user-created and externally sourced recipes) to find entries matching user-selected filters, such as containing certain ingredients or meeting dietary restrictions. For example, when searching the book, a user may be asked:
 >  * 	“What ingredients would you like to cook with?”
 >  * 	“Do you have any dietary restrictions?”
->  * 	[IF YES] “Please input your dietary restrictions.”
+>  ** 	[IF YES] “Please input your dietary restrictions.”
 >  * 	“Would you like to search by maximum calorie level?”
->  * 	[IF YES] “Please input the maximum amount of desired calories in your meal.”
+>  ** 	[IF YES] “Please input the maximum amount of desired calories in your meal.”
+>    	"What is the calorie range (unit in K)?"
+>    	
 
 
 
