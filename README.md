@@ -19,9 +19,16 @@ Input/Output
 >      *    What ingredients would you like to cook with?
 >      * 	“Do you have any dietary restrictions?”
 >           * 	[IF YES] “Please input your dietary restrictions.”
->      * 	“Would you like to search by maximum calorie level?”
->           * 	[IF YES] “Please input the maximum amount of desired calories in your meal.”
->      *  "What is the calorie range (unit in K)?"
+>           *  [IF NO] type NA
+>      * 	“Would you like to add the calorie range for your meal (Unit in K)?”
+>           * 	[IF YES] “Please input the minimum and maximum amount of desired calories in your meal.”
+>           *  [IF NO] type NA
+>      *  "Which types of cuisine would you like to have?"
+>           *  [IF YES][List of options] such as Japanese, Italian, Korean, Mediterranean, etc.
+>           *  [IF NO] type NA
+>      *  "Any specific cooking methods?"
+>           *  [IF YES][List of options] such as pan-fried, stew, air-frying, broiling, steaming, roasting, etc.
+>           *  [IF NO] type NA
 >    	
 What are the features that the project provides?
 >  * 	Search engine for recipes
