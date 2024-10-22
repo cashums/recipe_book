@@ -3,9 +3,6 @@
  
  > Authors: [Lydia Niu](https://github.com/LydiaNiu), [Cash Bruce](https://github.com/cashums), [Muhammad Sabeel](https://github.com/MuhammadS04), [Muhammad Ibrahim Abid](https://github.com/Bossmanthing098)
 
- > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list and start thinking about the features you will implement. If you want to propose your own original idea, you will have to contact your instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). The project work should be divided almost equally among team members. You can of course help each other, but it needs to be clear who will be responsible for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings.
-
- 
 
 ## Project Description
 >  * 	We are creating a detailed and dynamic recipe search engine that filters through multiple attributes like ingredients, calories, cuisine variety, and user comments. While we aim for a robust and highly functional search engine, our focus extends beyond that by exploring the complexities of object-oriented programming. By building this project with class objects, we can enable features like adding personalized menus, leaving comments, and generating a "daily menu" based on user preferences.
@@ -33,7 +30,6 @@ What are the features that the project provides?
 >  * 	Calorie tracker
 
  > 
- > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
