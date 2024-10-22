@@ -13,7 +13,11 @@
 ## Project Description
 Your project description should summarize the project you are proposing. Be sure to include:
 Why is it important or interesting to you?
->  * Instead of cooking with what we already have, it can be easy to search for completely new recipes requiring ingredients that will likely only be used once before going to waste. Instead, a better way to cook starts with cooking with as many already-owned ingredients as possible, cutting both grocery costs as well as food waste. This project not only allows a user to manage an expansive book of their own recipes, but also to search a database of pre-existing recipes by various metrics (pre-owned ingredients, cook time, calorie count, etc.) to make finding their next home-made meal easy. As someone who does a look of cooking myself, I fully intend to use this and expand upon it after class is over.
+>  * 	We are creating a detailed and dynamic recipe search engine that filters through multiple attributes like ingredients, calories, cuisine variety, and user comments. While we aim for a robust and highly functional search engine, our focus extends beyond that by exploring the complexities of object-oriented programming. By building this project with class objects, we can enable features like adding personalized menus, leaving comments, and generating a "daily menu" based on user preferences.
+>  * 	Additionally, the project emphasizes practicality and sustainability. Instead of encouraging users to search for completely new recipes requiring rare ingredients, it prioritizes using pre-owned ingredients, reducing grocery costs, and minimizing food waste. Users can search through an expansive database of recipes by various metrics—pre-owned ingredients, cook time, calories, and more—making it easy to find the next homemade meal.
+>  * 	This all-in-one database not only provides recipe suggestions and calorie tracking but also stores the history of user-created meals. It’s a versatile tool that helps users navigate a variety of cooking ideas and promotes efficient, sustainable meal planning. We plan to expand on this after class to continue refining its usefulness in everyday cooking.
+
+
 
 What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
 >  * We are going to focus on using C++ and maybe some libraries to create/build up/analyze the .csv file. Additionally, we will use HTML and CSS to create a basic website interface.
@@ -30,8 +34,12 @@ What will be the input/output of your project?
 
 
 
- > * What are the features that the project provides?
->  * 
+What are the features that the project provides?
+>  * 	Search engine for recipes
+>  * 	Algorithm that provides recipes based on user inputted ingredients and other factors 
+>  * 	History of favorite foods
+>  * 	Calorie tracker
+
  > 
  > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
  > ## Phase II
