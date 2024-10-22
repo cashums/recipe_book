@@ -11,8 +11,6 @@
  
 
 ## Project Description
-Your project description should summarize the project you are proposing. Be sure to include:
-Why is it important or interesting to you?
 >  * 	We are creating a detailed and dynamic recipe search engine that filters through multiple attributes like ingredients, calories, cuisine variety, and user comments. While we aim for a robust and highly functional search engine, our focus extends beyond that by exploring the complexities of object-oriented programming. By building this project with class objects, we can enable features like adding personalized menus, leaving comments, and generating a "daily menu" based on user preferences.
 >  * 	Additionally, the project emphasizes practicality and sustainability. Instead of encouraging users to search for completely new recipes requiring rare ingredients, it prioritizes using pre-owned ingredients, reducing grocery costs, and minimizing food waste. Users can search through an expansive database of recipes by various metrics—pre-owned ingredients, cook time, calories, and more—making it easy to find the next homemade meal.
 >  * 	This all-in-one database not only provides recipe suggestions and calorie tracking but also stores the history of user-created meals. It’s a versatile tool that helps users navigate a variety of cooking ideas and promotes efficient, sustainable meal planning. We plan to expand on this after class to continue refining its usefulness in everyday cooking.
