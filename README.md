@@ -1,6 +1,4 @@
 # Recipe Book & Search Engine
- > Your author list below should include links to all members GitHub (remove existing author).
- 
  > Authors: [Lydia Niu](https://github.com/LydiaNiu), [Cash Bruce](https://github.com/cashums), [Muhammad Sabeel](https://github.com/MuhammadS04), [Muhammad Ibrahim Abid](https://github.com/Bossmanthing098)
 
 
