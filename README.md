@@ -15,12 +15,9 @@
 >  * 	Additionally, the project emphasizes practicality and sustainability. Instead of encouraging users to search for completely new recipes requiring rare ingredients, it prioritizes using pre-owned ingredients, reducing grocery costs, and minimizing food waste. Users can search through an expansive database of recipes by various metrics—pre-owned ingredients, cook time, calories, and more—making it easy to find the next homemade meal.
 >  * 	This all-in-one database not only provides recipe suggestions and calorie tracking but also stores the history of user-created meals. It’s a versatile tool that helps users navigate a variety of cooking ideas and promotes efficient, sustainable meal planning. We plan to expand on this after class to continue refining its usefulness in everyday cooking.
 
-
-
-What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
 >  * We are going to focus on using C++ and maybe some libraries to create/build up/analyze the .csv file. Additionally, we will use HTML and CSS to create a basic website interface.
 
-What will be the input/output of your project?
+Input/Output
 >  * 	The project will have two primary functions: 
 >  * Users can create, store, view, and edit recipes to be stored in a greater recipe book.
 >  * 	Users can navigate an existing recipe book (containing both user-created and externally sourced recipes) to find entries matching user-selected filters, such as containing certain ingredients or meeting dietary restrictions. For example, when searching the book, a user may be asked:
