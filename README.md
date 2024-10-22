@@ -18,8 +18,9 @@
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
 >  * We are going to focus on using C++ and maybe some libraries to create/build up/analyze the .csv file. Additionally, we will use HTML and CSS to create a basic website interface.
 
- > * What will be the input/output of your project?
+What will be the input/output of your project?
 >  * 	The project will have two primary functions: 
+>  * Users can create, store, view, and edit recipes to be stored in a greater recipe book.
 
  > * What are the features that the project provides?
 >  * 
