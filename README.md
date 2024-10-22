@@ -23,8 +23,8 @@
 
  > * What will be the input/output of your project?
 >  * 	The project will have two primary functions: 
-	1	Users can create, store, view, and edit recipes to be stored in a greater recipe book.
-	2	Users can navigate an existing recipe book (containing both user-created and externally sourced recipes) to find entries matching user-selected filters, such as containing certain ingredients or meeting dietary restrictions. For example, when searching the book, a user may be asked:
+	> 1	Users can create, store, view, and edit recipes to be stored in a greater recipe book.
+	> 2	Users can navigate an existing recipe book (containing both user-created and externally sourced recipes) to find entries matching user-selected filters, such as containing certain ingredients or meeting dietary restrictions. For example, when searching the book, a user may be asked:
 	1	“What ingredients would you like to cook with?”
 	2	“Do you have any dietary restrictions?”
 	1	[IF YES] “Please input your dietary restrictions.”
