@@ -48,7 +48,15 @@ What are the features that the project provides?
  > Include a ion diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from the User Interface Design Document Template of CMSC 345 at the University of Maryland Global Campus)
 
 ### Navigation Diagram
-> Draw a diagram illustrating how the user can navigate from one screen to another. Here is an [example](https://creately.com/diagram/example/ikfqudv82/user-navigation-diagram-classic?r=v). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. Give a brief description of what the diagram represents.
+>This navigation diagram outlines how users interact with different pages within a recipe application, illustrating the relationships and transitions between these pages:
+
+>- **Entry Points**: Users start by either signing up or logging in. They can switch between these pages before accessing the main page.
+>- **Main Page**: Acts as the central hub from which users can navigate to other sections, such as viewing favorite recipes, searching history, adding a recipe, or conducting a search.
+>- **Page Relationships**:
+>  - **Favorites and History**: From the main page, users can access their **favorite recipes** or **search history**. Each of these pages has a navigation option that takes the user back to the main page.
+>  - **Add Recipe Page**: Users can jump from the main page to the **add recipe page** to contribute a new recipe. A button on this page allows users to return to the main page.
+>  - **Search Functionality**: The **search button** on the main page directs users to the **searching page**, where they input filters. After applying filters, the **continue button** leads them to the **searching result** page. From the result page, users can go back to the search page to adjust their filters.
+>- **Log Out**: Every page provides an option to log out, returning the user to the login screen.
 
 <img width="556" alt="Screenshot 2024-11-04 at 9 38 16 PM" src="https://github.com/user-attachments/assets/ae4bb386-7203-47bd-9383-fb3c86c54dc3">
 
