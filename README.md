@@ -15,20 +15,12 @@ Tools
 Input/Output
 >  The project will have two primary functions: 
 >  * Users can create, store, view, and edit recipes to be stored in a greater recipe book.
->  * Users can navigate an existing recipe book (containing both user-created and externally sourced recipes) to find entries matching user-selected filters, such as containing certain ingredients or meeting dietary restrictions. For example, when searching the book, a user may be asked:
->      *    What ingredients would you like to cook with?
->      * 	“Do you have any dietary restrictions?”
->           * 	[IF YES] “Please input your dietary restrictions.”
->           *  [IF NO] type NA
->      * 	“Would you like to add the calorie range for your meal (Unit in K)?”
->           * 	[IF YES] “Please input the minimum and maximum amount of desired calories in your meal.”
->           *  [IF NO] type NA
->      *  "Which types of cuisine would you like to have?"
->           *  [IF YES][List of options] such as Japanese, Italian, Korean, Mediterranean, etc.
->           *  [IF NO] type NA
->      *  "Any specific cooking methods?"
->           *  [IF YES][List of options] such as pan-fried, stew, air-frying, broiling, steaming, roasting, etc.
->           *  [IF NO] type NA
+>  * Users can navigate an existing recipe book to find entries matching user-selected filters, such as containing certain ingredients, meeting dietary restrictions, range of calories, rating. For example, when searching the book, a user should select any of the filtering conditions:
+>      *  [checkbox] "What ingredients would you like to cook with?"
+>      * 	[checkbox] “Do you have any dietary restrictions?”
+>      * 	[user input] “Would you like to set a calorie range for your meal (Unit in K)?”
+>      *  [checkbox] "The rating of the food: "
+>      *  [user input] "Search by name: "
 >    	
 What are the features that the project provides?
 >  * 	Search engine for recipes
@@ -36,7 +28,6 @@ What are the features that the project provides?
 >  * 	History of favorite foods
 >  * 	Calorie tracker
 >  * 	Create new recipes
->  * 	Leave comments on the recipes
 >  * 	Generate daily menu based on the search history
 >  * 	User authentification/log-in feature
 
