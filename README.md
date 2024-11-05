@@ -62,7 +62,15 @@ What are the features that the project provides?
 
 
 ### Screen Layouts
-> ![SCR-20241104-taeu](https://github.com/user-attachments/assets/e35dcfdf-adef-4c0c-9643-868539f3d24a)
+><img width="965" alt="Screenshot 2024-11-04 at 10 08 29 PM" src="https://github.com/user-attachments/assets/34e9fcde-b91e-41bb-9db2-4ca0b210a8b8">
+><img width="1013" alt="Screenshot 2024-11-04 at 10 08 53 PM" src="https://github.com/user-attachments/assets/1ea5df5a-3af2-4123-b155-73400ed56848">
+><img width="1010" alt="Screenshot 2024-11-04 at 10 09 11 PM" src="https://github.com/user-attachments/assets/3bd45d41-754e-403c-bc6a-3d9d19586ac1">
+><img width="1010" alt="Screenshot 2024-11-04 at 10 09 44 PM" src="https://github.com/user-attachments/assets/e944b556-edfd-4753-8aaf-1b6debd7a1e6">
+
+>
+
+
+
 
 
 ## Class Diagram
