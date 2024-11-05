@@ -74,8 +74,22 @@ What are the features that the project provides?
 
 
 ## Class Diagram
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
- 
+ ![UML class (2)](https://github.com/user-attachments/assets/a7c80c52-e7df-4ea6-bdba-ed99daef9534)
+
+
+ > * Recipe
+ >     * Represents a single recipe in the recipe book. This class encapsulates all the necessary details and characteristics one would commonly search for when deciding what recipe to prepare.
+ > * Ingredient
+ >      * Represents an individual ingredient used in recipes. This class allows for detailed management of ingredients as well as classification based on attributes that link them to the recipes they will be used in.
+ > * Comment
+ >      * Represents a comment made by a user on a recipe. This class captures the interaction between users and recipes, allowing said users to create a social connection to their recipes.
+>  * User
+>       * Represents a user of the recipe book application. This class handles user-related functionalities such as adding comments, tracking personal preferences, and everything related to linking a user with their favorite recipes.
+>  * Authentication
+>       * Contains the umbrella of functions that allow for users to sign in and log out of their accounts, allowing for a seamless experience for linking a user with their history and saved recipes.
+>  * Recipe Book
+>       * The sum collection of all recipes as one unified recipe book; the purpose of the application. Stores, manages, and sorts through all of a user's saved recipes.
+
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
  
