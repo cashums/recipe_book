@@ -9,6 +9,7 @@ private:
 
     // Helper function to parse the nutrition data
     void parseNutritionData();
+    Nutrition(const int&, const std::string&);
 
 public:
     // Nutrition(const int&, const string&);

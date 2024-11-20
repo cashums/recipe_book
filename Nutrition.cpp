@@ -5,11 +5,9 @@
 
 using namespace std;
 
-// // Nutrition class implementation
-// Nutrition::Nutrition(const int& id, const std::string& nutritionData)
-//     : Recipe() { // missing constructor
-//     parseNutritionData();
-// }
+Nutrition::Nutrition(const int& id, const std::string& nutritionData) { 
+    parseNutritionData(); // Parse the nutrition data
+}
 
 void Nutrition::parseNutritionData() {
     std::regex pattern(R"(([^,]+?)\s(\d+\.?\d*)[a-zA-Z%]*)");
