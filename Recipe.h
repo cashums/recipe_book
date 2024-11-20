@@ -4,22 +4,25 @@ using namespace std;
 
 #include <string>
 #include <vector>
+#include <map>
 
 class Recipe {
     private:
         int recipeID;
         string recipeName;
-        vector<Ingredient> ingredients;
+        vector<Ingredient> ingredients; 
         int totalCals;
         string cuisine;
         vector<string> steps;
         double rating;
-        /*below is my concern (lydia): (based on the perspective from the datasest)
-        1. ingredients is a super long string, maybe vector is not a perfect fit
-        2. I need a subclass for nutrition. 
-        */
+        string instructions;
+        
     public:
-        void editRecipe();
-        void viewRecipe();
+        string rawNutritionData;
+        void editRecipe(); // im confused by edit which part of the recipe
+        void viewRecipe(); 
         void deleteRecipe();
+        // I think we may need a constructor to read the data into objects, including 
+        // all the attributes it should contain
+        // also a destructor...
 };
