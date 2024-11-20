@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Nutrition::Nutrition(const int& id, const std::string& nutritionData) { 
+Nutrition::Nutrition() { 
     parseNutritionData(); // Parse the nutrition data
 }
 
@@ -24,7 +24,7 @@ void Nutrition::parseNutritionData() {
 }
 
 double Nutrition::calculateCalories() {
-    double totalCalories = 0.0;
+    totalCalories = 0.0;
     
     // Iterate over the nutritionMap
     for (const auto& entry : nutritionMap) {
@@ -45,6 +45,6 @@ double Nutrition::calculateCalories() {
     return totalCalories;
 }
 
-std::map<std::string, double> Nutrition::getNutritionMap() const {
+map<string, double> Nutrition::getNutritionMap() const {
     return nutritionMap;
 }

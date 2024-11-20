@@ -6,14 +6,13 @@ using namespace std;
 class Nutrition : public Recipe {
 private:
     map<string, double> nutritionMap;
-
+    double totalCalories = 0.0;
     // Helper function to parse the nutrition data
     void parseNutritionData();
-    Nutrition(const int&, const std::string&);
+    Nutrition();
 
 public:
-    // Nutrition(const int&, const string&);
-
+    
     // Method to calculate calories
     double calculateCalories();
 
