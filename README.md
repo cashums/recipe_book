@@ -52,9 +52,10 @@ What are the features that the project provides?
 >![image](https://github.com/user-attachments/assets/6cc30ea3-154e-4dd7-98d2-5bf913f41638)
 >![image](https://github.com/user-attachments/assets/2579d136-1229-464c-9f7a-8879d8740e01)
 >![image](https://github.com/user-attachments/assets/c265c156-15c9-4dd5-a35c-cd9504243b7e)
->![image](https://github.com/user-attachments/assets/73457836-6316-4495-aa6c-9a2f43162ad5)
+>![image](https://github.com/user-attachments/assets/ef13b331-5569-4d34-9ad0-258f69696f6a)
 >![image](https://github.com/user-attachments/assets/edf417e1-fef5-48a2-bed9-0e5b4ef58dd7)
->![image](https://github.com/user-attachments/assets/255afac0-f709-4361-818c-47fe6d48a9ae)
+>![image](https://github.com/user-attachments/assets/53d4ffff-4636-4ee9-b295-4edd3404f367)
+
 >![image](https://github.com/user-attachments/assets/4af77db9-1ec2-4ad3-adbe-36be406072c1)
 
 
