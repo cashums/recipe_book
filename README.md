@@ -49,12 +49,20 @@ What are the features that the project provides?
 
 
 ### Screen Layouts
-><img width="965" alt="Screenshot 2024-11-04 at 10 08 29 PM" src="https://github.com/user-attachments/assets/34e9fcde-b91e-41bb-9db2-4ca0b210a8b8">
-><img width="1013" alt="Screenshot 2024-11-04 at 10 08 53 PM" src="https://github.com/user-attachments/assets/1ea5df5a-3af2-4123-b155-73400ed56848">
-><img width="1010" alt="Screenshot 2024-11-04 at 10 09 11 PM" src="https://github.com/user-attachments/assets/3bd45d41-754e-403c-bc6a-3d9d19586ac1">
-><img width="1010" alt="Screenshot 2024-11-04 at 10 09 44 PM" src="https://github.com/user-attachments/assets/e944b556-edfd-4753-8aaf-1b6debd7a1e6">
+>![image](https://github.com/user-attachments/assets/6cc30ea3-154e-4dd7-98d2-5bf913f41638)
+>![image](https://github.com/user-attachments/assets/2579d136-1229-464c-9f7a-8879d8740e01)
+>![image](https://github.com/user-attachments/assets/7aaea323-7051-4654-a19d-033c51a9f6f3)
+>![image](https://github.com/user-attachments/assets/73457836-6316-4495-aa6c-9a2f43162ad5)
+>![image](https://github.com/user-attachments/assets/edf417e1-fef5-48a2-bed9-0e5b4ef58dd7)
+>![image](https://github.com/user-attachments/assets/255afac0-f709-4361-818c-47fe6d48a9ae)
+>![image](https://github.com/user-attachments/assets/4af77db9-1ec2-4ad3-adbe-36be406072c1)
 
->
+
+
+
+
+
+
 
 
 ## Class Diagram
