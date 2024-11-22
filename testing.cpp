@@ -32,35 +32,5 @@ int main() {
         cout << "Invalid choice!" << endl;
     }
 
-    /*string fullString = "Quick; Healthy; Savory; Low-carb; Protein-rich; Mediterranean; Kid-friendly; Light; Comfort food; Salad";
-
-    istringstream tagsStream(fullString);
-
-    while (fullString.find(';') != string::npos)
-    {
-        size_t semicolonPosition = fullString.find(';');
-        cout << fullString.substr(0, semicolonPosition) << endl;
-        // Update fullString to exclude the processed tag and the semicolon
-        fullString = fullString.substr(semicolonPosition + 2); // Skip "; "
-    }
-
-    if (!fullString.empty())
-    {
-        cout << fullString << endl;
-    }
-
-    while(fullString.find('.') != string::npos) {
-        size_t periodPosition = fullString.find('.');
-        cout << fullString.substr(0, periodPosition + 1) << ' ';
-        if (periodPosition + 1 < fullString.size() && fullString[periodPosition + 1] == ' ')
-        {
-            fullString = fullString.substr(periodPosition + 2); // Skip past the period and space
-        }
-        else
-        {
-            fullString = fullString.substr(periodPosition + 1); // No space, just skip the period
-        }
-    }*/
-
     return 0;
 }
