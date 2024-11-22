@@ -51,7 +51,7 @@ What are the features that the project provides?
 ### Screen Layouts
 >![image](https://github.com/user-attachments/assets/6cc30ea3-154e-4dd7-98d2-5bf913f41638)
 >![image](https://github.com/user-attachments/assets/2579d136-1229-464c-9f7a-8879d8740e01)
->![image](https://github.com/user-attachments/assets/7aaea323-7051-4654-a19d-033c51a9f6f3)
+>![image](https://github.com/user-attachments/assets/c265c156-15c9-4dd5-a35c-cd9504243b7e)
 >![image](https://github.com/user-attachments/assets/73457836-6316-4495-aa6c-9a2f43162ad5)
 >![image](https://github.com/user-attachments/assets/edf417e1-fef5-48a2-bed9-0e5b4ef58dd7)
 >![image](https://github.com/user-attachments/assets/255afac0-f709-4361-818c-47fe6d48a9ae)
