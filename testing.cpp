@@ -1,0 +1,66 @@
+#include "Recipe.h"
+#include "dataParser.h"
+
+#include <string>
+#include <iostream>
+#include <sstream>
+using namespace std;
+
+int main() {
+    // Load recipes from dataInputter
+    Parser parser;
+    vector<Recipe*> recipeBook = parser.CSVparser();
+
+    // Display all recipes
+    cout << "Available Recipes:\n";
+    for (size_t i = 0; i < recipeBook.size(); i++)
+    {
+        cout << i + 1 << ": " << recipeBook.at(i)->getName() << endl;
+    }
+
+    // Allow user to view a specific recipe
+    cout << "Enter the number of the recipe to view: ";
+    int choice;
+    cin >> choice;
+
+    if (choice > 0 && choice <= recipeBook.size())
+    {
+        recipeBook.at(choice - 1)->viewRecipe();
+    }
+    else
+    {
+        cout << "Invalid choice!" << endl;
+    }
+
+    /*string fullString = "Quick; Healthy; Savory; Low-carb; Protein-rich; Mediterranean; Kid-friendly; Light; Comfort food; Salad";
+
+    istringstream tagsStream(fullString);
+
+    while (fullString.find(';') != string::npos)
+    {
+        size_t semicolonPosition = fullString.find(';');
+        cout << fullString.substr(0, semicolonPosition) << endl;
+        // Update fullString to exclude the processed tag and the semicolon
+        fullString = fullString.substr(semicolonPosition + 2); // Skip "; "
+    }
+
+    if (!fullString.empty())
+    {
+        cout << fullString << endl;
+    }
+
+    while(fullString.find('.') != string::npos) {
+        size_t periodPosition = fullString.find('.');
+        cout << fullString.substr(0, periodPosition + 1) << ' ';
+        if (periodPosition + 1 < fullString.size() && fullString[periodPosition + 1] == ' ')
+        {
+            fullString = fullString.substr(periodPosition + 2); // Skip past the period and space
+        }
+        else
+        {
+            fullString = fullString.substr(periodPosition + 1); // No space, just skip the period
+        }
+    }*/
+
+    return 0;
+}

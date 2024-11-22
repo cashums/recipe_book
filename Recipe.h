@@ -1,5 +1,5 @@
 #pragma once
-#include "Ingredient.h"
+//#include "Ingredient.h"
 using namespace std;
 
 #include <string>
@@ -10,19 +10,19 @@ class Recipe {
     private:
         int recipeID;
         string recipeName;
-        vector<Ingredient> ingredients; 
-        int totalCals;
-        string cuisine;
-        vector<string> steps;
-        double rating;
-        string instructions;
-        string url;
+        vector<string> ingredientNames, ingredientQuantities, instructions, tags;
+        int calories;
+        string cuisine, foodType;
+        int prepTime, cookTime, totalTime;
+        //double rating;
+       
     public:
         string rawNutritionData;
+        Recipe();
+        Recipe(string name, vector<string> ingredientNames, vector<string> ingredientQuantities, vector<string> directions, int calories, vector<string> tags, string cuisine, string foodType, int prepTime, int cookTime);
         void editRecipe(); // im confused by edit which part of the recipe
         void viewRecipe(); 
         void deleteRecipe();
-        // I think we may need a constructor to read the data into objects, including 
-        // all the attributes it should contain
+        string getName();
         // also a destructor...
 };
