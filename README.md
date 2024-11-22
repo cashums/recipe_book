@@ -49,12 +49,22 @@ What are the features that the project provides?
 
 
 ### Screen Layouts
-><img width="965" alt="Screenshot 2024-11-04 at 10 08 29 PM" src="https://github.com/user-attachments/assets/34e9fcde-b91e-41bb-9db2-4ca0b210a8b8">
-><img width="1013" alt="Screenshot 2024-11-04 at 10 08 53 PM" src="https://github.com/user-attachments/assets/1ea5df5a-3af2-4123-b155-73400ed56848">
-><img width="1010" alt="Screenshot 2024-11-04 at 10 09 11 PM" src="https://github.com/user-attachments/assets/3bd45d41-754e-403c-bc6a-3d9d19586ac1">
-><img width="1010" alt="Screenshot 2024-11-04 at 10 09 44 PM" src="https://github.com/user-attachments/assets/e944b556-edfd-4753-8aaf-1b6debd7a1e6">
+>![image](https://github.com/user-attachments/assets/6cc30ea3-154e-4dd7-98d2-5bf913f41638)
+>![image](https://github.com/user-attachments/assets/2579d136-1229-464c-9f7a-8879d8740e01)
+>![image](https://github.com/user-attachments/assets/c265c156-15c9-4dd5-a35c-cd9504243b7e)
+>![image](https://github.com/user-attachments/assets/00168683-c30e-4a43-82bc-1a678610c0c0)
 
->
+>![image](https://github.com/user-attachments/assets/edf417e1-fef5-48a2-bed9-0e5b4ef58dd7)
+>![image](https://github.com/user-attachments/assets/53d4ffff-4636-4ee9-b295-4edd3404f367)
+
+>![image](https://github.com/user-attachments/assets/4af77db9-1ec2-4ad3-adbe-36be406072c1)
+
+
+
+
+
+
+
 
 
 ## Class Diagram
@@ -74,26 +84,12 @@ What are the features that the project provides?
 >  * Recipe Book
 >       * The sum collection of all recipes as one unified recipe book; the purpose of the application. Stores, manages, and sorts through all of a user's saved recipes.
 
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * Make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
->  * Each team member should also submit the Individual Contributions Form on Canvas for phase III. In this form, you need to fill in the names of all team members, the percentage of work contributed by each member for phase III, and a description of their contributions. Remember that each team member should submit the form individually.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+## Updated Class Diagram
+![UML class - Page 2 (1)](https://github.com/user-attachments/assets/ae45273b-13b0-4630-a186-989dee676e6b)
+
+ > * SOLID Principles:
+ >   * Originally, the Recipe class was far too bloated and filled with too many member variables and member functions. After updating, the main components of a Recipe (Metadata, Steps, Comments, and Ingredients) have been placed into their own classes which aggregate into Recipe. This change more closely conforms to the Single Responsibility Principle, which makes Recipe as a whole easier to test, understand, and modify.
+ >   * Separating Nutrition from NutritionParser ensures that, even though NutritionParser is usually necessary to fetch information, Nutrition can still work independently without it. The Nutrition class is closed for modification but open for extension; if new sources of nutrition data are added, only the NutritionParser or its extensions need to change, leaving Nutrition untouched. This adheres to the Open-Closed Principle, allowing for greater independence among Nutrition-related assets.
 
  
  > ## Final deliverable

@@ -15,7 +15,7 @@ class Recipe {
         string cuisine, foodType;
         int prepTime, cookTime, totalTime;
         //double rating;
-        
+       
     public:
         string rawNutritionData;
         Recipe();
