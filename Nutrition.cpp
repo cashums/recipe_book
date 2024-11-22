@@ -10,14 +10,14 @@ Nutrition::Nutrition() {
 }
 
 void Nutrition::parseNutritionData() {
-    std::regex pattern(R"(([^,]+?)\s(\d+\.?\d*)[a-zA-Z%]*)");
-    std::smatch match;
+    regex pattern(R"(([^,]+?)\s(\d+\.?\d*)[a-zA-Z%]*)");
+    smatch match;
 
-    std::string::const_iterator searchStart(rawNutritionData.cbegin());
+    string::const_iterator searchStart(rawNutritionData.cbegin());
 
-    while (std::regex_search(searchStart, rawNutritionData.cend(), match, pattern)) {
-        std::string nutrientName = match[1];
-        double nutrientValue = std::stod(match[2]);
+    while (regex_search(searchStart, rawNutritionData.cend(), match, pattern)) {
+        string nutrientName = match[1];
+        double nutrientValue = stod(match[2]);
         nutritionMap[nutrientName] = nutrientValue;
         searchStart = match.suffix().first;
     }
@@ -28,7 +28,7 @@ double Nutrition::calculateCalories() {
     
     // Iterate over the nutritionMap
     for (const auto& entry : nutritionMap) {
-        const std::string& nutrientName = entry.first; // Key: nutrient name
+        const string& nutrientName = entry.first; // Key: nutrient name
         double nutrientValue = entry.second;          // Value: grams/mg of nutrient
 
         // Check for specific nutrients and add their calorie contribution
