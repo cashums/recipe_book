@@ -16,7 +16,7 @@ class Recipe {
         vector<string> steps;
         double rating;
         string instructions;
-        
+        string url;
     public:
         string rawNutritionData;
         void editRecipe(); // im confused by edit which part of the recipe
