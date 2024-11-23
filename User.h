@@ -25,6 +25,8 @@ private:
     vector<Recipe> searchingHistory_vec;
     vector<Recipe> favoriteRecipe_vec;
 
+
     void addSearchingHist(Recipe&);
     void addFavorRecipe(Recipe&);
+
 };
