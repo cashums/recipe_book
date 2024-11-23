@@ -1,5 +1,6 @@
 #include "User.h"
 #include "Book.h"
+#include "Recipe.h"
 
 #include <iostream>
 #include <vector>
@@ -15,7 +16,7 @@ User::~User() {
 
 // Public Methods
 
-void User::signUp(string＆ name, int& id) {
+void User::signUp(string& name, int& id) {
     // Implementation for user signup
     userName = name;
     userID = id;

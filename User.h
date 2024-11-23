@@ -8,7 +8,7 @@
 using namespace std;
 
 class User{
-    void signUp(string＆, int&);
+    void signUp(string&, int&);
     bool logIn(string&, int&);
     void logOut();
 
