@@ -1,10 +1,13 @@
 #include "User.h"
 #include "Book.h"
+#include "Recipe.h"
 
 #include <iostream>
 #include <vector>
 #include <string>
 #include <map>
+
+using namespace std;
 
 // Destructor
 User::~User() {
@@ -13,13 +16,13 @@ User::~User() {
 
 // Public Methods
 
-void User::signUp(const std::string& name, const int& id) {
+void User::signUp(string& name, int& id) {
     // Implementation for user signup
     userName = name;
     userID = id;
 }
 
-bool User::logIn(const std::string& name, const int& id) {
+bool User::logIn(string& name, int& id) {
     // Implementation for user login
     authentication(name, id);
 }
@@ -39,10 +42,9 @@ void User::displayHist() {
     }
 }
 
-void User::addSearchingHist(int &recipeId, Book& book) {
+void User::addSearchingHist(Recipe& hist) {
     // Implementation to add to search history
-    auto it = book.recipeMap.find(recipeId);
-    if (it != book.recipeMap.end()) searchingHistory_vec.push_back(it->second);
+    searchingHistory_vec.push_back(hist);
 }
 
 void User::displayFav() {
@@ -56,14 +58,9 @@ void User::displayFav() {
     }
 }
 
-void User::addFavorRecipe(int &recipeId, Book& book) {
+void User::addFavorRecipe(Recipe& fav) {
     // Implementation to add a recipe to favorites
-    auto it = book.recipeMap.find(recipeId);
-    if (it != book.recipeMap.end()) {
-        favoriteRecipe_vec.push_back(it->second); 
-    } else {
-        std::cout << "Fail to add to Favorites because recipe with ID " << recipeId << " not found." << std::endl;
-    }
+    favoriteRecipe_vec.push_back(fav);
 }
 
 // Private Methods
