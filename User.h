@@ -5,9 +5,11 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class User{
-    void signUp(const string&, const int&);
-    bool logIn(const string&, const int&);
+    void signUp(string＆, int&);
+    bool logIn(string&, int&);
     void logOut();
 
     void displayHist();
@@ -23,6 +25,6 @@ private:
     vector<Recipe> searchingHistory_vec;
     vector<Recipe> favoriteRecipe_vec;
 
-    void addSearchingHist(Recipe*);Lydi
-    void addFavorRecipe(Recipe*);
+    void addSearchingHist(Recipe&);
+    void addFavorRecipe(Recipe&);
 };

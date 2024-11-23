@@ -1,12 +1,12 @@
 #pragma once
-//#include "Ingredient.h"
+#include "Book.h"
 using namespace std;
 
 #include <string>
 #include <vector>
 #include <map>
 
-class Recipe {
+class Recipe : public Book{
     private:
         int recipeID;
         string recipeName;
