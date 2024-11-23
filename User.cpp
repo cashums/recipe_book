@@ -74,7 +74,7 @@ bool User::authentication(const std::string& name, const int& id) const {
         cout << "Log in successfully!";
         return true;
     }else{
-        cout << "fail to log in, please try again.";
+        cout << "fail to log in, please try again or sign up a new account.";
         return false; // Placeholder return value
     }
 }

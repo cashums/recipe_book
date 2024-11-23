@@ -23,6 +23,6 @@ private:
     vector<Recipe> searchingHistory_vec;
     vector<Recipe> favoriteRecipe_vec;
 
-    void addSearchingHist(Recipe*);Lydi
-    void addFavorRecipe(Recipe*);
+    void addSearchingHist(Recipe);Lydi
+    void addFavorRecipe(Recipe);
 };
