@@ -7,5 +7,6 @@
 
 class DailyMenu : public User{
     vector<Recipe> dailyMenu[3];
-    vecotr<Recipe> generateMenu(vector<Recipe>&, vector<Recipe>&);
-}
+    void generateMenu(vector<Recipe>&, vector<Recipe>&);
+    void displayMenu(Recipe&);
+};
