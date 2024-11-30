@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Book.h"
+#include "Recipe.h"
 
 #include <string>
 #include <vector>
@@ -12,12 +12,11 @@ public:
     void signUp(string&, int&);
     bool logIn(string&, int&);
     void logOut();
-
-    void displayHist();
-    void displayFav();
+    void addSearchingHist(Recipe&);
+    void addFavorRecipe(Recipe&);
+    void display(vector<Recipe>&);
 
     User();
-    ~User();
 
 private:
     string userName = "";
@@ -26,9 +25,5 @@ private:
     bool authentication(const string&, const int&)const;
     vector<Recipe> searchingHistory_vec;
     vector<Recipe> favoriteRecipe_vec;
-
-
-    void addSearchingHist(Recipe&);
-    void addFavorRecipe(Recipe&);
 
 };

@@ -1,21 +1,13 @@
 #include "User.h"
-#include "Book.h"
 #include "Recipe.h"
 
 #include <iostream>
 #include <vector>
 #include <string>
-#include <map>
 
 using namespace std;
 
 User::User(){
-
-}
-
-// Destructor
-User::~User() {
-    // Cleanup logic here (if any)
     userName = "";
     userID = 0;
     password = "";
@@ -38,11 +30,11 @@ void User::logOut() {
     // Implementation for user logout
 }
 
-void User::displayHist() {
+void User::display(vector<Recipe>& myVec) {
     // Implementation to display search history
-    for (Recipe recipe : searchingHistory_vec) {
-        if (searchingHistory_vec.empty()) { // Check if the pointer is not null
-            std::cout << "Start looking for the recipe of your favorite food!" << std::endl;
+    for (Recipe recipe : myVec) {
+        if (myVec.empty()) { // Check if the pointer is not null
+            cout << "Start looking for the recipe of your favorite food!" << std::endl;
         } else {
             recipe.viewRecipe(); // Assuming Recipe has a viewRecipe() method
         }
@@ -52,17 +44,6 @@ void User::displayHist() {
 void User::addSearchingHist(Recipe& hist) {
     // Implementation to add to search history
     searchingHistory_vec.push_back(hist);
-}
-
-void User::displayFav() {
-    // Implementation to display favorite recipes
-    for (Recipe recipe : favoriteRecipe_vec) {
-        if (favoriteRecipe_vec.empty()) { // Check if the pointer is not null
-            std::cout << "Start looking for the recipe of your favorite food!" << std::endl;
-        } else {
-            recipe.viewRecipe(); // Assuming Recipe has a viewRecipe() method
-        }
-    }
 }
 
 void User::addFavorRecipe(Recipe& fav) {
