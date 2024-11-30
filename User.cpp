@@ -9,9 +9,16 @@
 
 using namespace std;
 
+User::User(){
+
+}
+
 // Destructor
 User::~User() {
     // Cleanup logic here (if any)
+    userName = "";
+    userID = 0;
+    password = "";
 }
 
 // Public Methods

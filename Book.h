@@ -1,5 +1,9 @@
 #pragma once
 
+#include <vector>
+
 class Book{
-    friend class User;
+    vector<Recipe*> allRecipes;
+public:
+    vector<Recipe*> getRecipe(){return allRecipes;}
 };

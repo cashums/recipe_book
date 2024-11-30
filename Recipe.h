@@ -20,9 +20,7 @@ class Recipe : public Book{
         string rawNutritionData;
         Recipe();
         Recipe(string name, vector<string> ingredientNames, vector<string> ingredientQuantities, vector<string> directions, int calories, vector<string> tags, string cuisine, string foodType, int prepTime, int cookTime);
-        void editRecipe(); // im confused by edit which part of the recipe
-        void viewRecipe(); 
-        void deleteRecipe();
+        void viewRecipe();
         string getName();
         // also a destructor...
 };

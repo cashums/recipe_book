@@ -8,6 +8,7 @@
 using namespace std;
 
 class User{
+public:
     void signUp(string&, int&);
     bool logIn(string&, int&);
     void logOut();
@@ -15,6 +16,7 @@ class User{
     void displayHist();
     void displayFav();
 
+    User();
     ~User();
 
 private:

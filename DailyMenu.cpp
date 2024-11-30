@@ -9,10 +9,10 @@
 
 void displayMenu(Recipe& recipe) {
     // Dummy function to simulate displaying a Recipe
-    cout << recipe.viewRecipe() << endl; // Assuming Recipe has a getTitle() method
+    recipe.viewRecipe(); // Assuming Recipe has a getTitle() method
 }
 
-void DailyMenu::generateMenu(vector<Recipe>& fav_vec, vector<Recipe>& hist_vec){
+void DailyMenu::generateMenu(Book& book, vector<Recipe>& fav_vec, vector<Recipe>& hist_vec){
     vector<Recipe> combined;
     // Insert elements of vec1 into combined
     combined.insert(combined.end(), fav_vec.begin(), fav_vec.end());
@@ -30,10 +30,10 @@ void DailyMenu::generateMenu(vector<Recipe>& fav_vec, vector<Recipe>& hist_vec){
         // so randomly choose more options from the recipe book
         for (size_t i = combined.size(); i < (3 - combined.size()); ++i) {
             // Randomly choose a recipe from the Book's recipe list
-
+            vector<Recipe*> allRecipes = book.getRecipe();
             //error
-            randomNum = rand() % book.allRecipes.size(); // Assuming Book has allRecipes as a vector<Recipe*>
-            Recipe randomRecipe = book.allRecipes[randomNum];
+            randomNum = rand() % allRecipes.size(); // Assuming Book has allRecipes as a vector<Recipe*>
+            Recipe randomRecipe = *allRecipes[randomNum];
             displayMenu(randomRecipe);
         }
     }else {
