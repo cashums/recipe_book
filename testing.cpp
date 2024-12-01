@@ -6,10 +6,11 @@
 #include <sstream>
 using namespace std;
 
-int main() {
+int main()
+{
     // Load recipes from dataInputter
     Parser parser;
-    vector<Recipe*> recipeBook = parser.CSVparser();
+    vector<Recipe *> recipeBook = parser.CSVparser();
 
     // Display all recipes
     cout << "Available Recipes:\n";
@@ -31,6 +32,8 @@ int main() {
     {
         cout << "Invalid choice!" << endl;
     }
+
+    void addRecipe(recipeBook);
 
     /*string fullString = "Quick; Healthy; Savory; Low-carb; Protein-rich; Mediterranean; Kid-friendly; Light; Comfort food; Salad";
 
@@ -63,4 +66,76 @@ int main() {
     }*/
 
     return 0;
+}
+
+void addRecipe(vector<Recipe *> recipeBook)
+{
+    cin.ignore();
+
+    string name, cuisine, foodType;
+    vector<string> ingredientNames, ingredientQuantities, instructions, tags;
+    int calories, prepTime, cookTime;
+
+    cout << "\nEnter recipe name: ";
+    getline(cin, name);
+
+    cout << "\nEnter ingredients (type 'done' when finished):\n";
+    while (true)
+    {
+        string ingredient, quantity;
+        cout << "\n\tIngredient name: ";
+        getline(cin, ingredient);
+        if (ingredient == "done")
+            break;
+
+        cout << "\n\tQuantity for " << ingredient << ": ";
+        getline(cin, quantity);
+
+        ingredientNames.push_back(ingredient);
+        ingredientQuantities.push_back(quantity);
+    }
+
+    cout << "\nEnter Directions (type 'done' when finished):\n";
+    while (true)
+    {
+        string direction;
+        cout << "Step: ";
+        getline(cin, direction);
+        if (directoin == "done")
+            break;
+        instructions.push_back(direction);
+    }
+
+    cout << "\nEnter number of calories: ";
+    cin >> calories;
+    cin.ignore(); // Clear input buffer
+
+    cout << "\nEnter Tags (type 'done' when finished):\n";
+    while (true)
+    {
+        string tag;
+        cout << "Tag: ";
+        getline(cin, tag);
+        if (tag == "done")
+            break;
+        tags.push_back(tag);
+    }
+
+    cout << "\nEnter cuisine type: ";
+    getline(cin, cuisine);
+
+    cout << "\nEnter food type (e.g., Main Course, Side Dish): ";
+    getline(cin, foodType);
+
+    cout << "\nEnter prep time (in minutes): ";
+    cin >> prepTime;
+
+    cout << "\nEnter cook time (in minutes): ";
+    cin >> cookTime;
+
+    Recipe *newRecipe{name, ingredientNames, ingredientQuantities, instructions,
+                      calories, tags, cuisine, foodType, prepTime, cookTime};
+    recipeBook.push_back(newRecipe);
+
+    cout << "\nNew Recipe Added : " << name << endl;
 }
