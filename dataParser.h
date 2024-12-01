@@ -9,7 +9,10 @@
 #include <sstream>
 using namespace std;
 
-class Parser {
-    public:
-        vector<Recipe*> CSVparser();
+class Parser
+{
+public:
+    int *recipeAmt;
+    vector<Recipe *> CSVparser();
+    // void addRecipe()
 };
