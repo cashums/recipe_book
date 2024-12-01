@@ -9,21 +9,18 @@ using namespace std;
 
 User::User(){
     userName = "";
-    userID = 0;
     password = "";
 }
 
+User::User(string& userName, string& password){
+    this->userName = userName;
+    this->password = password;
+}
 // Public Methods
 
-void User::signUp(string& name, int& id) {
-    // Implementation for user signup
-    userName = name;
-    userID = id;
-}
-
-bool User::logIn(string& name, int& id) {
+bool User::logIn(string& userName, string& password) {
     // Implementation for user login
-    authentication(name, id);
+    authentication(userName, password);
 }
 
 void User::logOut() {
@@ -53,9 +50,9 @@ void User::addFavorRecipe(Recipe& fav) {
 
 // Private Methods
 
-bool User::authentication(const std::string& name, const int& id) const {
+bool User::authentication(const string& name, const string& password) const {
     // Implementation for user authentication
-    if (userName == name && userID == id){
+    if (userName == name && this->password == password){
         cout << "Log in successfully!";
         return true;
     }else{
