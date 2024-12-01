@@ -9,20 +9,21 @@ using namespace std;
 
 class User{
 public:
-    void signUp(string&, int&);
-    bool logIn(string&, int&);
+    bool logIn(string&, string&);
     void logOut();
     void addSearchingHist(Recipe&);
     void addFavorRecipe(Recipe&);
     void display(vector<Recipe>&);
+    string getUserName() {return userName;}
+    string getUserPassword() {return password;}
 
     User();
+    User(string&, string&);
 
 private:
     string userName = "";
-    int userID = 0;
     string password;
-    bool authentication(const string&, const int&)const;
+    bool authentication(const string&, const string&)const;
     vector<Recipe> searchingHistory_vec;
     vector<Recipe> favoriteRecipe_vec;
 

@@ -8,12 +8,14 @@
 
 void DailyMenu::displayMenu(vector<Recipe> &menu) {
     // Dummy function to simulate displaying a Recipe
-    cout << "Hello! Here is your personalized daily menu!" << endl;
+    cout << "-------------------------------------------" << endl
+         << "Here is your personalized daily menu!" << endl;
     for (Recipe recipe : menu){
         recipe.viewRecipe(); // Assuming Recipe has a getTitle() method
         caloryTracker += recipe.getCalories();
     }
-    cout << "The total calories of today's meals will be: " << caloryTracker << endl;
+    cout << "The total calories of today's meals will be: " << caloryTracker << endl
+        << "-------------------------------------------";
 }
 
 void DailyMenu::generateMenu(Book& book, vector<Recipe>& fav_vec, vector<Recipe>& hist_vec){
