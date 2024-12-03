@@ -12,6 +12,7 @@ using namespace std;
 class Parser
 {
 public:
-    vector<Recipe *> CSVparser();
-    void writeToCSV(Recipe *recipe);
+    int *recipeAmt;
+    vector<Recipe*> CSVparser(vector<Recipe *> currBook);
+    // void addRecipe()
 };
