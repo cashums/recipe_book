@@ -2,75 +2,81 @@
 #include "Recipe.h"
 
 #include <sstream>
-
 #include <iostream>
-using namespace std;
 
-vector<string> split(const string &str, char delimiter) {
-    vector<string> result;
-    stringstream ss(str);
-    string item;
-    while (getline(ss, item, delimiter)) {
-        result.push_back(item);
-    }
-    return result;
-}
+using namespace std;
 
 vector<Recipe*> Book::getBook() {
     return currBook;
 }
 
 void Book::addRecipe() {
-    cout << "Add a new recipe." << endl;
-    // add code to create a new Recipe object from user input
-    string name;
-    vector<string> ingredientNames, ingredientQuantities, directions, tags;
-    int calories, prepTime, cookTime;
-    string cuisine, foodType;
-
-    // Prompt user for inputs
-    cout << "Enter recipe name: ";
     cin.ignore();
+
+    string name, cuisine, foodType;
+    vector<string> ingredientNames, ingredientQuantities, instructions, tags;
+    int calories, prepTime, cookTime;
+
+    cout << "\nEnter recipe name: ";
     getline(cin, name);
 
-    cout << "Enter ingredient names (comma-separated): ";
-    string input;
-    getline(cin, input);
-    ingredientNames = split(input, ',');
+    cout << "\nEnter ingredients (type 'done' when finished):\n";
+    while (true) {
+        string ingredient, quantity;
+        cout << "\n\tIngredient name: ";
+        getline(cin, ingredient);
+        if (ingredient == "done")
+            break;
 
-    cout << "Enter ingredient quantities (comma-separated): ";
-    getline(cin, input);
-    ingredientQuantities = split(input, ',');
+        cout << "\n\tQuantity for " << ingredient << ": ";
+        getline(cin, quantity);
 
-    cout << "Enter directions (each step comma-separated): ";
-    getline(cin, input);
-    directions = split(input, ',');
+        ingredientNames.push_back(ingredient);
+        ingredientQuantities.push_back(quantity);
+    }
 
-    cout << "Enter number of calories: ";
+    cout << "\nEnter Directions (type 'done' when finished):\n";
+    while (true) {
+        string direction;
+        cout << "Step: ";
+        getline(cin, direction);
+        if (direction == "done")
+            break;
+        instructions.push_back(direction);
+    }
+
+    cout << "\nEnter number of calories: ";
     cin >> calories;
+    cin.ignore(); // Clear input buffer
 
-    cout << "Enter tags (comma-separated): ";
-    cin.ignore();
-    getline(cin, input);
-    tags = split(input, ',');
+    cout << "\nEnter Tags (type 'done' when finished):\n";
+    while (true) {
+        string tag;
+        cout << "Tag: ";
+        getline(cin, tag);
+        if (tag == "done")
+            break;
+        tags.push_back(tag);
+    }
 
-    cout << "Enter cuisine type: ";
+    cout << "\nEnter cuisine type: ";
     getline(cin, cuisine);
 
-    cout << "Enter food type: ";
+    cout << "\nEnter food type (e.g., Main Course, Side Dish): ";
     getline(cin, foodType);
 
-    cout << "Enter preparation time (minutes): ";
+    cout << "\nEnter prep time (in minutes): ";
     cin >> prepTime;
 
-    cout << "Enter cooking time (minutes): ";
+    cout << "\nEnter cook time (in minutes): ";
     cin >> cookTime;
 
-    // Directly create and add the Recipe object
-    Recipe* newRecipe = new Recipe(name, ingredientNames, ingredientQuantities, directions, calories, tags, cuisine, foodType, prepTime, cookTime);
-
-    // Assuming you have a member function or container to store the Recipe object
+    Recipe* newRecipe = new Recipe (name, ingredientNames, ingredientQuantities, instructions, calories, tags, cuisine, foodType, prepTime, cookTime);
     currBook.push_back(newRecipe);
 
-    cout << "Recipe added successfully!" << endl;
+    cout << "\nNew Recipe Added: " << name << endl;
+}
+
+void Book::deleteRecipe() {
+    // filler
 }

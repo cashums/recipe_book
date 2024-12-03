@@ -17,7 +17,7 @@ Recipe::Recipe(string name = "", vector<string> ingredientNames = {}, vector<str
     totalTime = (prepTime + cookTime);
 }
 
-Recipe::Recipe(string name, vector<string> ingredientNames, vector<string> ingredientQuantities, vector<string> directions, int calories, vector<string> tags, string cuisine, string foodType, int prepTime, int cookTime) {
+/*Recipe::Recipe(string name, vector<string> ingredientNames, vector<string> ingredientQuantities, vector<string> directions, int calories, vector<string> tags, string cuisine, string foodType, int prepTime, int cookTime) {
     recipeName = name;
     this->ingredientNames = ingredientNames;
     this->ingredientQuantities = ingredientQuantities;
@@ -29,7 +29,7 @@ Recipe::Recipe(string name, vector<string> ingredientNames, vector<string> ingre
     this->prepTime = prepTime;
     this->cookTime = cookTime;
     totalTime = (prepTime + cookTime);
-}
+}*/
 
 void Recipe::viewRecipe() {
     // Display the recipe details

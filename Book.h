@@ -12,5 +12,5 @@ class Book {
 public:
     vector<Recipe*> getBook();
     void addRecipe();
-    vector<string> splitHelper(const string& msg, char delimiter);
+    void deleteRecipe();
 };

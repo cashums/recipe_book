@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Book.h"
 #include "dataParser.h"
 
