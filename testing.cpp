@@ -10,7 +10,7 @@ int main()
 {
     // Load recipes from dataInputter
     Parser parser;
-    vector<Recipe *> recipeBook = parser.CSVparser();
+    vector<Recipe*> recipeBook = parser.CSVparser();
 
     // Display all recipes
     cout << "Available Recipes:\n";
@@ -101,7 +101,7 @@ void addRecipe(vector<Recipe *> recipeBook)
         string direction;
         cout << "Step: ";
         getline(cin, direction);
-        if (directoin == "done")
+        if (direction == "done")
             break;
         instructions.push_back(direction);
     }

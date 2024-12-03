@@ -13,6 +13,6 @@ class Parser
 {
 public:
     int *recipeAmt;
-    vector<Recipe *> CSVparser(vector<Recipe *> currBook);
+    vector<Recipe*> CSVparser(vector<Recipe *> currBook);
     // void addRecipe()
 };
