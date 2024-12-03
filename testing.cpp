@@ -6,7 +6,7 @@
 #include <sstream>
 using namespace std;
 
-void addRecipe(vector<Recipe *> &recipeBook);
+Recipe *addRecipe(vector<Recipe *> &recipeBook);
 void viewAllRecipes(vector<Recipe *> &recipeBook);
 
 int main()
@@ -15,7 +15,8 @@ int main()
     vector<Recipe *> recipeBook = parser.CSVparser();
 
     viewAllRecipes(recipeBook);
-    addRecipe(recipeBook);
+    Recipe *newRecipe = addRecipe(recipeBook);
+    parser.writeToCSV(newRecipe);
     viewAllRecipes(recipeBook);
 
     /*string fullString = "Quick; Healthy; Savory; Low-carb; Protein-rich; Mediterranean; Kid-friendly; Light; Comfort food; Salad";
@@ -79,7 +80,7 @@ void viewAllRecipes(vector<Recipe *> &recipeBook)
     }
 }
 
-void addRecipe(vector<Recipe *> &recipeBook)
+Recipe *addRecipe(vector<Recipe *> &recipeBook)
 {
     cout << " ADD new Recipe:: \n";
     cin.ignore();
@@ -150,4 +151,5 @@ void addRecipe(vector<Recipe *> &recipeBook)
     recipeBook.push_back(newRecipe);
 
     cout << "\nNew Recipe Added : " << name << endl;
+    return newRecipe;
 }
