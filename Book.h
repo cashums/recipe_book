@@ -2,8 +2,9 @@
 
 #include <vector>
 
-class Book{
-    vector<Recipe*> allRecipes;
+class Book
+{
+    // vector<Recipe*> allRecipes;
 public:
-    vector<Recipe*> getRecipe(){return allRecipes;}
+    // vector<Recipe*> getRecipe(){return allRecipes;}
 };

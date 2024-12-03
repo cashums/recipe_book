@@ -6,34 +6,17 @@
 #include <sstream>
 using namespace std;
 
+void addRecipe(vector<Recipe *> &recipeBook);
+void viewAllRecipes(vector<Recipe *> &recipeBook);
+
 int main()
 {
-    // Load recipes from dataInputter
     Parser parser;
     vector<Recipe *> recipeBook = parser.CSVparser();
 
-    // Display all recipes
-    cout << "Available Recipes:\n";
-    for (size_t i = 0; i < recipeBook.size(); i++)
-    {
-        cout << i + 1 << ": " << recipeBook.at(i)->getName() << endl;
-    }
-
-    // Allow user to view a specific recipe
-    cout << "Enter the number of the recipe to view: ";
-    int choice;
-    cin >> choice;
-
-    if (choice > 0 && choice <= recipeBook.size())
-    {
-        recipeBook.at(choice - 1)->viewRecipe();
-    }
-    else
-    {
-        cout << "Invalid choice!" << endl;
-    }
-
-    void addRecipe(recipeBook);
+    viewAllRecipes(recipeBook);
+    addRecipe(recipeBook);
+    viewAllRecipes(recipeBook);
 
     /*string fullString = "Quick; Healthy; Savory; Low-carb; Protein-rich; Mediterranean; Kid-friendly; Light; Comfort food; Salad";
 
@@ -68,8 +51,37 @@ int main()
     return 0;
 }
 
-void addRecipe(vector<Recipe *> recipeBook)
+void viewAllRecipes(vector<Recipe *> &recipeBook)
 {
+    // Load recipes from dataInputter
+    // Parser parser;
+    // vector<Recipe *> recipeBook = parser.CSVparser();
+
+    // Display all recipes
+    cout << "Available Recipes:\n";
+    for (size_t i = 0; i < recipeBook.size(); i++)
+    {
+        cout << i + 1 << ": " << recipeBook.at(i)->getName() << endl;
+    }
+
+    // Allow user to view a specific recipe
+    cout << "Enter the number of the recipe to view: ";
+    int choice;
+    cin >> choice;
+
+    if (choice > 0 && choice <= recipeBook.size())
+    {
+        recipeBook.at(choice - 1)->viewRecipe();
+    }
+    else
+    {
+        cout << "Invalid choice!" << endl;
+    }
+}
+
+void addRecipe(vector<Recipe *> &recipeBook)
+{
+    cout << " ADD new Recipe:: \n";
     cin.ignore();
 
     string name, cuisine, foodType;
@@ -101,7 +113,7 @@ void addRecipe(vector<Recipe *> recipeBook)
         string direction;
         cout << "Step: ";
         getline(cin, direction);
-        if (directoin == "done")
+        if (direction == "done")
             break;
         instructions.push_back(direction);
     }
@@ -133,8 +145,8 @@ void addRecipe(vector<Recipe *> recipeBook)
     cout << "\nEnter cook time (in minutes): ";
     cin >> cookTime;
 
-    Recipe *newRecipe{name, ingredientNames, ingredientQuantities, instructions,
-                      calories, tags, cuisine, foodType, prepTime, cookTime};
+    Recipe *newRecipe = new Recipe{name, ingredientNames, ingredientQuantities, instructions,
+                                   calories, tags, cuisine, foodType, prepTime, cookTime};
     recipeBook.push_back(newRecipe);
 
     cout << "\nNew Recipe Added : " << name << endl;
