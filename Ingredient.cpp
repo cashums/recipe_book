@@ -1,87 +1,54 @@
-// File: Ingredient.cpp
-
 #include "Ingredient.h"
-#include <algorithm>
 
-// Constructor
-Ingredient::Ingredient(int id, const std::string& name, int calories, const std::string& allergens, const std::string& restrictions)
-    : ingredientID(id), name(name), calsPerServing(calories), allergens(allergens), dietRestrictions(restrictions) {}
+// Constructor: Initialize ingredient attributes
+Ingredient::Ingredient(int id, const std::string& n, int cal, char all, const std::string& diet)
+    : ingredientID(id), name(n), calPerServing(cal), allergens(all), dietRestrictions(diet) {}
 
-// Accessor Methods
-int Ingredient::getIngredientID() const { return ingredientID; }
-std::string Ingredient::getName() const { return name; }
-int Ingredient::getCaloriesPerServing() const { return calsPerServing; }
-std::string Ingredient::getAllergens() const { return allergens; }
-std::string Ingredient::getDietRestrictions() const { return dietRestrictions; }
-
-// Mutator Methods
-void Ingredient::setIngredientID(int id) { ingredientID = id; }
-void Ingredient::setName(const std::string& name) { this->name = name; }
-void Ingredient::setCaloriesPerServing(int calories) { calsPerServing = calories; }
-void Ingredient::setAllergens(const std::string& allergens) { this->allergens = allergens; }
-void Ingredient::setDietRestrictions(const std::string& restrictions) { dietRestrictions = restrictions; }
-
-// Functional Methods
-double Ingredient::calculateCals(int servings) const {
-    return servings * calsPerServing;
+// Calculate the total calories for one serving
+double Ingredient::calculateCals() const {
+    return static_cast<double>(calPerServing);
 }
 
-bool Ingredient::isAllergen(const std::string& allergen) const {
-    return allergens.find(allergen) != std::string::npos;
+// Check if the ingredient contains a specific allergen
+bool Ingredient::isAllergen(char allergen) const {
+    return allergens == allergen;
 }
 
-bool Ingredient::isDietSuitable(const std::string& dietType) const {
-    return dietRestrictions.find(dietType) != std::string::npos;
+// Check if the ingredient matches a specific dietary restriction
+bool Ingredient::isDietSuitable(const std::string& diet) const {
+    return dietRestrictions == diet;
 }
 
-void Ingredient::getInfo() const {
-    std::cout << "Ingredient ID: " << ingredientID << "\n"
-              << "Name: " << name << "\n"
-              << "Calories per Serving: " << calsPerServing << "\n"
-              << "Allergens: " << allergens << "\n"
-              << "Diet Restrictions: " << dietRestrictions << "\n";
+// Retrieve a formatted string containing information about the ingredient
+std::string Ingredient::getInfo() const {
+    return "Ingredient ID: " + std::to_string(ingredientID) +
+           ", Name: " + name +
+           ", Calories per Serving: " + std::to_string(calPerServing) +
+           ", Allergen: " + std::string(1, allergens) +
+           ", Diet Restrictions: " + dietRestrictions;
 }
 
-// Filtering Methods
-std::vector<Ingredient> Ingredient::filterByAllergens(const std::vector<Ingredient>& ingredients, const std::string& allergen) {
-    std::vector<Ingredient> filtered;
-    for (const auto& ingredient : ingredients) {
-        if (!ingredient.isAllergen(allergen)) { // Keep ingredients that do not contain the allergen
-            filtered.push_back(ingredient);
-        }
-    }
-    return filtered;
+// Getter for Ingredient ID
+int Ingredient::getIngredientID() const {
+    return ingredientID;
 }
 
-std::vector<Ingredient> Ingredient::filterByDietRestrictions(const std::vector<Ingredient>& ingredients, const std::string& restriction) {
-    std::vector<Ingredient> filtered;
-    for (const auto& ingredient : ingredients) {
-        if (ingredient.isDietSuitable(restriction)) {
-            filtered.push_back(ingredient);
-        }
-    }
-    return filtered;
+// Getter for Name
+std::string Ingredient::getName() const {
+    return name;
 }
 
-// Favorites Methods
-void Ingredient::addFavoriteRecipe(const std::string& recipe) {
-    favoriteRecipes.push_back(recipe);
-    std::cout << "Recipe added to favorites: " << recipe << "\n";
+// Getter for Calories per Serving
+int Ingredient::getCaloriesPerServing() const {
+    return calPerServing;
 }
 
-void Ingredient::removeFavoriteRecipe(const std::string& recipe) {
-    auto it = std::remove(favoriteRecipes.begin(), favoriteRecipes.end(), recipe);
-    if (it != favoriteRecipes.end()) {
-        favoriteRecipes.erase(it, favoriteRecipes.end());
-        std::cout << "Recipe removed from favorites.\n";
-    } else {
-        std::cout << "Recipe not found in favorites.\n";
-    }
+// Getter for Allergens
+char Ingredient::getAllergens() const {
+    return allergens;
 }
 
-void Ingredient::listFavoriteRecipes() const {
-    std::cout << "Favorite Recipes:\n";
-    for (const auto& recipe : favoriteRecipes) {
-        std::cout << " - " << recipe << "\n";
-    }
+// Getter for Diet Restrictions
+std::string Ingredient::getDietRestrictions() const {
+    return dietRestrictions;
 }

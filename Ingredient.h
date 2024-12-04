@@ -1,54 +1,39 @@
-// File: Ingredient.h
-
 #ifndef INGREDIENT_H
 #define INGREDIENT_H
 
 #include <string>
-#include <vector>
-#include <iostream>
 
+// Represents an Ingredient used in recipes
 class Ingredient {
 private:
-    int ingredientID;          // Unique identifier for the ingredient
-    std::string name;          // Name of the ingredient
-    int calsPerServing;        // Calories per serving
-    std::string allergens;     // Allergens (e.g., gluten, dairy)
-    std::string dietRestrictions; // Diet restrictions (e.g., Vegetarian, Vegan)
-
-    // Favorite recipes
-    std::vector<std::string> favoriteRecipes;
+    int ingredientID;                // Unique identifier for the ingredient
+    std::string name;                // Name of the ingredient
+    int calPerServing;               // Calories per serving of the ingredient
+    char allergens;                  // A character representing the allergen, if any
+    std::string dietRestrictions;    // Dietary restrictions (e.g., vegetarian, vegan, etc.)
 
 public:
     // Constructor
-    Ingredient(int id, const std::string& name, int calories, const std::string& allergens, const std::string& restrictions);
+    Ingredient(int id, const std::string& n, int cal, char all, const std::string& diet);
 
-    // Accessor and Mutator Methods
+    // Calculates the total calories for one serving
+    double calculateCals() const;
+
+    // Checks if the ingredient contains a specific allergen
+    bool isAllergen(char allergen) const;
+
+    // Checks if the ingredient is suitable for a specific diet
+    bool isDietSuitable(const std::string& diet) const;
+
+    // Retrieves formatted information about the ingredient
+    std::string getInfo() const;
+
+    // Getters for the class attributes
     int getIngredientID() const;
     std::string getName() const;
     int getCaloriesPerServing() const;
-    std::string getAllergens() const;
+    char getAllergens() const;
     std::string getDietRestrictions() const;
-
-    void setIngredientID(int id);
-    void setName(const std::string& name);
-    void setCaloriesPerServing(int calories);
-    void setAllergens(const std::string& allergens);
-    void setDietRestrictions(const std::string& restrictions);
-
-    // Functional Methods
-    double calculateCals(int servings) const;
-    bool isAllergen(const std::string& allergen) const;
-    bool isDietSuitable(const std::string& dietType) const;
-    void getInfo() const;
-
-    // Filtering Methods
-    static std::vector<Ingredient> filterByAllergens(const std::vector<Ingredient>& ingredients, const std::string& allergen);
-    static std::vector<Ingredient> filterByDietRestrictions(const std::vector<Ingredient>& ingredients, const std::string& restriction);
-
-    // Favorites Methods
-    void addFavoriteRecipe(const std::string& recipe);
-    void removeFavoriteRecipe(const std::string& recipe);
-    void listFavoriteRecipes() const;
 };
 
-#endif // INGREDIENT_H
+#endif // INGREDIENT_HPP
