@@ -13,5 +13,6 @@ add_executable(runCode
     mainMenu.cpp
     dataParser.cpp
     Recipe.cpp
+    main.cpp
     Book.cpp
 )
