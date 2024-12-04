@@ -9,10 +9,7 @@
 
 using namespace std;
 
-
-void filteringPage(){}
-
-
+void filteringPage() {}
 
 // User* signUp(){
 //     string userName, password;
@@ -74,7 +71,8 @@ void filteringPage(){}
 //     }
 // }
 
-void mainMenu(User &user){
+void mainMenu(User &user)
+{
     cout << "------------Welcome to Recipe Book------------" << endl
          << "Here is your personalized daily menu: " << endl;
     // I want to call the generateMenu and displayMenu, both functions are in the
@@ -82,9 +80,10 @@ void mainMenu(User &user){
     return;
 }
 
-int main(){
+int main()
+{
     Book book;
-    User* user_ptr = nullptr;
+    User *user_ptr = nullptr;
     int userInput_int = 0;
     User user;
     cout << "Welcome to the Recipe Book!" << endl
@@ -92,14 +91,23 @@ int main(){
          << "(enter 1 for sign up, 2 for log in): ";
     cin >> userInput_int;
 
-    while (cin.fail() || (userInput_int != 1 && userInput_int != 2)){
+    while (cin.fail() || (userInput_int != 1 && userInput_int != 2))
+    {
         cout << "Your input is invalid. Please input again: ";
         cin >> userInput_int;
     }
-    if (userInput_int == 1){ user = *user.signUp();
-    }else if(userInput_int == 2){ user = *user.logIn(); }
+    if (userInput_int == 1)
+    {
+        user = *user.signUp();
+    }
+    else if (userInput_int == 2)
+    {
+        user = *user.logIn();
+    }
 
     mainMenu(user);
-    
+    cout << "\nAdd new recipe:\n";
+    book.addRecipe();
+
     return 1;
 }
