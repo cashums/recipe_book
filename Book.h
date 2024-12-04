@@ -1,9 +1,16 @@
 #pragma once
 
-#include <vector>
+#include "Recipe.h"
 
-class Book{
-    vector<Recipe*> allRecipes;
+#include <vector>
+#include <string>
+
+using namespace std;
+
+class Book {
+    vector<Recipe*> currBook;
 public:
-    vector<Recipe*> getRecipe(){return allRecipes;}
+    vector<Recipe*> getBook();
+    void addRecipe();
+    void deleteRecipe();
 };
