@@ -72,6 +72,5 @@ string Recipe::getName() {
     return this->recipeName;
 }
 
-/*Recipe::~Recipe() {
-    delete 
-}*/
+Recipe::~Recipe() {
+}
