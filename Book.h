@@ -7,10 +7,14 @@
 
 using namespace std;
 
-class Book {
-    vector<Recipe*> currBook;
+class Book
+{
+    vector<Recipe *> currBook;
+
 public:
-    vector<Recipe*> getBook();
+    Book();
+    vector<Recipe *> getBook();
     void addRecipe();
     void deleteRecipe();
+    void viewAllRecipes();
 };
