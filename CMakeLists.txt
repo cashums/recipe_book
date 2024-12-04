@@ -13,4 +13,5 @@ add_executable(runCode
     dataParser.cpp
     Recipe.cpp
     testing.cpp
+    main.cpp
 )
