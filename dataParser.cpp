@@ -7,25 +7,28 @@
 #include <sstream>
 using namespace std;
 
-vector<Recipe*> Parser::CSVparser(vector<Recipe*> currBook) {
+vector<Recipe *> Parser::CSVparser()
+{
     // take in all data from recipe file first
     ifstream CSVreader("recipes.csv");
     string currRecipe, temp;
 
-    if (!CSVreader.is_open()) {
+    if (!CSVreader.is_open())
+    {
         cerr << "Error opening recipe file" << endl;
     }
 
-    vector<Recipe*> recipeBook;
+    vector<Recipe *> recipeBook;
 
-    while (getline(CSVreader, currRecipe)) {
+    while (getline(CSVreader, currRecipe))
+    {
         string name;
         vector<string> ingredientNames, ingredientQuantities, directions;
         int calories;
         vector<string> tags;
         string cuisine, foodType;
         int prepTime, cookTime;
-        
+
         istringstream rp(currRecipe);
 
         // store recipeName
@@ -40,9 +43,11 @@ vector<Recipe*> Parser::CSVparser(vector<Recipe*> currBook) {
         istringstream ingredientsStream(ingredientsSection);
 
         string currIngredient;
-        while (getline(ingredientsStream, currIngredient, ';')) {
+        while (getline(ingredientsStream, currIngredient, ';'))
+        {
             size_t colonPosition = currIngredient.find(':');
-            if (colonPosition != string::npos) {
+            if (colonPosition != string::npos)
+            {
                 ingredientNames.push_back(currIngredient.substr(0, colonPosition));
                 ingredientQuantities.push_back(currIngredient.substr(colonPosition + 1));
             }
@@ -55,14 +60,17 @@ vector<Recipe*> Parser::CSVparser(vector<Recipe*> currBook) {
         getline(rp, fullDirections, '"');
         istringstream directionsStream(fullDirections);
 
-        //string currDirection;
-        while (fullDirections.find('.') != string::npos) {
+        // string currDirection;
+        while (fullDirections.find('.') != string::npos)
+        {
             size_t periodPosition = fullDirections.find('.');
             directions.push_back(fullDirections.substr(0, periodPosition + 1));
-            if (periodPosition + 1 < fullDirections.size() && fullDirections[periodPosition + 1] == ' ') {
+            if (periodPosition + 1 < fullDirections.size() && fullDirections[periodPosition + 1] == ' ')
+            {
                 fullDirections = fullDirections.substr(periodPosition + 2); // Skip past the period and space
             }
-            else {
+            else
+            {
                 fullDirections = fullDirections.substr(periodPosition + 1); // No space, just skip the period
             }
         }
@@ -71,13 +79,16 @@ vector<Recipe*> Parser::CSVparser(vector<Recipe*> currBook) {
         rp.ignore();
         string caloriesStr;
         getline(rp, caloriesStr, ',');
-        try {
+        try
+        {
             calories = stoi(caloriesStr);
         }
-        catch (const std::invalid_argument &e) {
+        catch (const std::invalid_argument &e)
+        {
             cerr << "Invalid input for calories: " << caloriesStr << endl;
         }
-        catch (const std::out_of_range &e) {
+        catch (const std::out_of_range &e)
+        {
             cerr << "Calories value out of range: " << caloriesStr << endl;
         }
 
@@ -86,12 +97,14 @@ vector<Recipe*> Parser::CSVparser(vector<Recipe*> currBook) {
         string allTags;
         getline(rp, allTags, '"');
 
-        while(allTags.find(';') != string::npos) {
+        while (allTags.find(';') != string::npos)
+        {
             size_t semicolonPosition = allTags.find(';');
             tags.push_back(allTags.substr(0, semicolonPosition));
             allTags = allTags.substr(semicolonPosition + 2);
         }
-        if (!allTags.empty()) {
+        if (!allTags.empty())
+        {
             tags.push_back(allTags);
         }
 
@@ -114,11 +127,11 @@ vector<Recipe*> Parser::CSVparser(vector<Recipe*> currBook) {
         rp >> cookTime;
 
         // create a Recipe object from parsed information
-        Recipe* newRecipe = new Recipe(name, ingredientNames, ingredientQuantities, directions, calories, tags, cuisine, foodType, prepTime, cookTime);
-        currBook.push_back(newRecipe);
+        Recipe *newRecipe = new Recipe(name, ingredientNames, ingredientQuantities, directions, calories, tags, cuisine, foodType, prepTime, cookTime);
+        recipeBook.push_back(newRecipe);
     }
 
     CSVreader.close();
 
-    return currBook;
+    return recipeBook;
 }
