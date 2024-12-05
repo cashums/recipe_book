@@ -2,17 +2,8 @@
 #include <iostream>
 using namespace std;
 
-Recipe::Recipe() {
-    /*this->recipeID = 0;
-    this->recipeName = "";
-    this->ingredientNames = "";
-    ingredientQuantities, instructions;
-    int calories;
-    string cuisine, foodType;
-    int prepTime, cookTime, totalTime;*/
-}
-
-Recipe::Recipe(string name, vector<string> ingredientNames, vector<string> ingredientQuantities, vector<string> directions, int calories, vector<string> tags, string cuisine, string foodType, int prepTime, int cookTime) {
+// default constructor assigning a 0 or blank to all inputs if not specified by user
+Recipe::Recipe(string name = "", vector<string> ingredientNames = {}, vector<string> ingredientQuantities = {}, vector<string> directions = {}, int calories = 0, vector<string> tags = {}, string cuisine = "", string foodType = "", int prepTime = 0, int cookTime = 0) {
     recipeName = name;
     this->ingredientNames = ingredientNames;
     this->ingredientQuantities = ingredientQuantities;
@@ -25,6 +16,20 @@ Recipe::Recipe(string name, vector<string> ingredientNames, vector<string> ingre
     this->cookTime = cookTime;
     totalTime = (prepTime + cookTime);
 }
+
+/*Recipe::Recipe(string name, vector<string> ingredientNames, vector<string> ingredientQuantities, vector<string> directions, int calories, vector<string> tags, string cuisine, string foodType, int prepTime, int cookTime) {
+    recipeName = name;
+    this->ingredientNames = ingredientNames;
+    this->ingredientQuantities = ingredientQuantities;
+    instructions = directions;
+    this->calories = calories;
+    this->tags = tags;
+    this->cuisine = cuisine;
+    this->foodType = foodType;
+    this->prepTime = prepTime;
+    this->cookTime = cookTime;
+    totalTime = (prepTime + cookTime);
+}*/
 
 void Recipe::viewRecipe() {
     // Display the recipe details
@@ -65,4 +70,7 @@ void Recipe::viewRecipe() {
 
 string Recipe::getName() {
     return this->recipeName;
+}
+
+Recipe::~Recipe() {
 }
