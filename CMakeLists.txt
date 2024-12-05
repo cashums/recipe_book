@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add the executable
 add_executable(runCode 
-    mainMenu.cpp
+    qmainMenu.cpp
     dataParser.cpp
     Recipe.cpp
     Book.cpp
