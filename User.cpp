@@ -67,7 +67,7 @@ User* User::signUp(){
 
     // write the new user to the csv file
     ofstream file("users.csv", ios::app);
-    file << userName << "," << password << "\n";
+    file << userName << "," << password << "," << "," << "\n";
     file.close();
 
     cout << "Sign-up successful!" << endl;
@@ -83,7 +83,8 @@ User* User::logIn() {
     cin >> password;
 
     if (userExist(userName, password)) {
-        cout << "Login successful! Welcome back, " << userName << "." << endl;
+        cout << endl << "Login successful! Welcome back, " << userName << "." << endl;
+        readVecCSV();
         User* new_user = new User(userName, password);
         return new_user;
     }else{
@@ -110,24 +111,60 @@ void User::logOut() {
     // Implementation for user logout
 }
 
-void User::display(vector<Recipe>& myVec) {
+void User::display(vector<int>& myVec) {
     // Implementation to display search history
     if (myVec.empty()) {
         cout << "Start looking for the recipe of your favorite food!" << endl;
         return;
     }
     for (int i = 0; i < myVec.size(); i++) {
-        myVec[i].viewRecipe(); // Assuming Recipe has a viewRecipe() method
+        // myVec[i].viewRecipe(); // Assuming Recipe has a viewRecipe() method
     }
 }
 
-void User::addSearchingHist(Recipe& hist) {
+void User::addSearchingHist(int &recipeIndex) {
     // Implementation to add to search history
-    searchingHistory_vec.push_back(hist);
+    searchingHistory_vec.push_back(recipeIndex);
+    writeVecCSV(searchingHistory_vec);
 }
 
-void User::addFavorRecipe(Recipe& fav) {
+void User::addFavorRecipe(int &recipeIndex) {
     // Implementation to add a recipe to favorites
-    favoriteRecipe_vec.push_back(fav);
+    favoriteRecipe_vec.push_back(recipeIndex);
+    writeVecCSV(favoriteRecipe_vec);
 }
 
+void User::readVecCSV(){
+    ifstream inputFile("users.csv");
+    if (!inputFile.is_open()) {
+        cerr << "Error: Could not open CSV file for reading." << endl;
+        return;
+    }
+    string line, token;
+    while (getline(inputFile, line)) {
+        stringstream ss(line);
+        vector<string> row;
+        while (getline(ss, token, ',')) {
+            row.push_back(token);
+        }
+
+        // Check if the row corresponds to the current user
+        if (row.size() >= 4 && row[0] == userName) {
+            // Parse searching history vector
+            stringstream searchHistStream(row[2]);
+            while (getline(searchHistStream, token, ';')) {
+                searchingHistory_vec.push_back(stoi(token));
+            }
+
+            // Parse favorite recipe vector
+            stringstream favStream(row[3]);
+            while (getline(favStream, token, ';')) {
+                favoriteRecipe_vec.push_back(stoi(token));
+            }
+        }
+    }
+    inputFile.close();
+}
+void User::writeVecCSV(vector<int>&){
+    
+}

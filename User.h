@@ -12,11 +12,15 @@ public:
     User* logIn();
     void logOut();
     User* signUp();
-    void addSearchingHist(Recipe&);
-    void addFavorRecipe(Recipe&);
-    void addSearchingHist(vector<Recipe>&);
-    void addFavorRecipe(vector<Recipe>&);
-    void display(vector<Recipe>&);
+
+    void addSearchingHist(int&);
+    void addFavorRecipe(int&);
+    void readVecCSV();
+    void writeVecCSV(vector<int>&);
+    // void addFavorRecipe(vector<Recipe>&);
+
+
+    void display(vector<int>&);
     string getUserName() {return userName;}
     string getUserPassword() {return password;}
     bool userExist(const string&, const string& password = "");
@@ -27,7 +31,7 @@ public:
 private:
     string userName = "";
     string password = "";
-    vector<Recipe> searchingHistory_vec;
-    vector<Recipe> favoriteRecipe_vec;
+    vector<int> searchingHistory_vec;
+    vector<int> favoriteRecipe_vec;
 
 };
