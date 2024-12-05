@@ -9,12 +9,13 @@ using namespace std;
 
 class Book
 {
-    vector<Recipe *> currBook;
-
+private:
+    vector<Recipe*> currBook;
 public:
     Book();
-    vector<Recipe *> getBook();
+    vector<Recipe*> getBook();
     void addRecipe();
+    Recipe* findRecipeByID(int id);
     void deleteRecipe();
     void viewAllRecipes();
 };

@@ -12,7 +12,7 @@ Book::Book()
     currBook = Parser::CSVparser();
 }
 
-vector<Recipe *> Book::getBook()
+vector<Recipe*> Book::getBook()
 {
     return currBook;
 }
@@ -104,12 +104,23 @@ void Book::addRecipe()
     cout << "\nEnter cook time (in minutes): ";
     cin >> cookTime;
 
-    Recipe *newRecipe = new Recipe(name, ingredientNames, ingredientQuantities, instructions, calories, tags, cuisine, foodType, prepTime, cookTime);
+    Recipe* newRecipe = new Recipe(name, ingredientNames, ingredientQuantities, instructions, calories, tags, cuisine, foodType, prepTime, cookTime);
     currBook.push_back(newRecipe);
+    //currBook.back()->setRecipeID(currBook.size());
+    newRecipe->setRecipeID(currBook.size());
 
     Parser p;
     p.writeToCSV(newRecipe);
     cout << "\nNew Recipe Added: " << name << endl;
+}
+
+Recipe* Book::findRecipeByID(int id) 
+{
+    if (id > 0 && id <= currBook.size())
+    {
+        return currBook.at(id - 1); // IDs start at 1, so adjust index
+    }
+    return nullptr;
 }
 
 void Book::deleteRecipe()
