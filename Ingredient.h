@@ -7,6 +7,8 @@
 #include <vector>
 #include <iostream>
 
+// No Destructor Needed
+
 class Ingredient {
 private:
     int ingredientID;          // Unique identifier for the ingredient

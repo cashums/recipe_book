@@ -1,6 +1,7 @@
 #include "Comment.h"
 using namespace std;
 
+// Checked for destructor Not Needed
 Comment::Comment(string text, int userID, int recipeID, int commentID)
 {
     this->commentText = text;

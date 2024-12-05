@@ -13,8 +13,19 @@ class Book
 
 public:
     Book();
+    ~Book(); // Destructor declaration
     vector<Recipe *> getBook();
     void addRecipe();
     void deleteRecipe();
     void viewAllRecipes();
 };
+
+// Destructor definition
+Book::~Book()
+{
+    for (Recipe *recipe : currBook)
+    {
+        delete recipe;
+    }
+    currBook.clear(); // Optional: ensures the vector is emptied
+}
