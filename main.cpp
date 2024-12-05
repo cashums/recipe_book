@@ -106,6 +106,8 @@ int main()
     }
 
     mainMenu(user);
+    book.viewAllRecipes();
+
     cout << "\nAdd new recipe:\n";
     book.addRecipe();
 
