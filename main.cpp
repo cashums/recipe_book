@@ -108,5 +108,9 @@ int main()
     mainMenu(user);
     book.viewAllRecipes();
 
+    cout << "\nAdd new recipe:\n";
+    book.addRecipe();      // testing add
+    book.viewAllRecipes(); // testing if add worked and added to vector
+
     return 1;
 }

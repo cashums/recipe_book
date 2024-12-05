@@ -14,5 +14,5 @@ class Parser
 public:
     int *recipeAmt;
     static vector<Recipe *> CSVparser();
-    // void addRecipe()
+    void writeToCSV(Recipe *recipe);
 };
