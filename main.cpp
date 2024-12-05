@@ -109,8 +109,9 @@ int main()
     book.viewAllRecipes();
 
     cout << "\nAdd new recipe:\n";
-    book.addRecipe();      // testing add
-    book.viewAllRecipes(); // testing if add worked and added to vector
+    // if you addRecipe . It will write to CSV and Add to current vector
+    // book.addRecipe();      // This function works. its commented so it doesnt run
+    // book.viewAllRecipes(); // works
 
     return 1;
 }
