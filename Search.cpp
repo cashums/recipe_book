@@ -11,7 +11,7 @@ vector<Recipe*> searchRecipes(const vector<Recipe*>& cookbook, const string& nam
     for (Recipe* recipe : cookbook) {
         bool match = true;
 
-        if (!name.empty() && recipe->getName() != name) {
+        if (!name.empty() && recipe->getName() != name)  {
             match = false;
         }
 
