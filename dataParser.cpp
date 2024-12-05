@@ -135,3 +135,97 @@ vector<Recipe *> Parser::CSVparser()
 
     return recipeBook;
 }
+
+void Parser::writeToCSV(Recipe *recipe)
+{
+    ifstream CSVreader("recipes.csv");
+    string currentRecipe;
+
+    if (!CSVreader.is_open())
+    {
+        cerr << "Error opening recipe file" << endl;
+    }
+
+    string line;
+    bool exists = false;
+    while (getline(CSVreader, line))
+    {
+        istringstream iss(line);
+        string existingTitle;
+        getline(iss, existingTitle, ',');
+
+        if (existingTitle == recipe->getName())
+        {
+            exists = true;
+            break;
+        }
+    }
+
+    CSVreader.close();
+
+    if (!exists)
+    {
+        ofstream CSVfile("recipes.csv", ios::app);
+        if (!CSVfile.is_open())
+        {
+            cerr << "Error opening recipe file" << endl;
+        }
+
+        // Add a newline if the file doesn't already end with one
+        std::ifstream checkFile("recipes.csv", std::ios::ate);
+        if (checkFile.is_open() && checkFile.tellg() > 0)
+        {                                       // Check if file is not empty
+            checkFile.seekg(-1, std::ios::end); // Move to the last character
+            char lastChar;
+            checkFile.get(lastChar);
+            if (lastChar != '\n')
+            {
+                CSVfile << "\n"; // Append a newline if the file does not end with one
+            }
+        }
+        checkFile.close();
+
+        CSVfile << recipe->getName() << ",\"";
+
+        for (size_t i = 0; i < recipe->getIngredientNames().size(); ++i)
+        {
+            CSVfile << recipe->getIngredientNames()[i] << ": " << recipe->getIngredientQuantities()[i];
+            if (i != recipe->getIngredientNames().size() - 1)
+            {
+                CSVfile << "; ";
+            }
+        }
+        CSVfile << "\",\"";
+        // Combine directions
+        for (size_t i = 0; i < recipe->getInstructions().size(); ++i)
+        {
+            CSVfile << recipe->getInstructions()[i];
+            if (i != recipe->getInstructions().size() - 1)
+            {
+                CSVfile << ". ";
+            }
+        }
+        CSVfile << "\"," << recipe->getCalories() << ",\"";
+
+        // Combine tags
+        for (size_t i = 0; i < recipe->getTags().size(); ++i)
+        {
+            CSVfile << recipe->getTags()[i];
+            if (i != recipe->getTags().size() - 1)
+            {
+                CSVfile << "; ";
+            }
+        }
+        CSVfile << recipe->getCuisine() << ","
+                << recipe->getFoodType() << ","
+                << recipe->getprepTime() << ","
+                << recipe->getCookTime() << "\n";
+
+        CSVfile.close();
+        std::cout << "Recipe successfully added!" << std::endl;
+    }
+    else
+    {
+        std::cout << "Recipe with the title \"" << recipe->getName() << "\" already exists in the file." << std::endl;
+    }
+}

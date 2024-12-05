@@ -107,6 +107,8 @@ void Book::addRecipe()
     Recipe *newRecipe = new Recipe(name, ingredientNames, ingredientQuantities, instructions, calories, tags, cuisine, foodType, prepTime, cookTime);
     currBook.push_back(newRecipe);
 
+    Parser p;
+    p.writeToCSV(newRecipe);
     cout << "\nNew Recipe Added: " << name << endl;
 }
 
