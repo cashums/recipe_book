@@ -3,6 +3,8 @@
 #include "Ingredient.h"
 #include <algorithm>
 
+// No destructor Needed
+
 // Constructor
 Ingredient::Ingredient(int id, const std::string& name, int calories, const std::string& allergens, const std::string& restrictions)
     : ingredientID(id), name(name), calsPerServing(calories), allergens(allergens), dietRestrictions(restrictions) {}

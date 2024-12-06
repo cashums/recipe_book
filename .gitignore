@@ -5,3 +5,7 @@ cmake_install.cmake
 /CMakeFiles
 runCode
 a.out
+<<<<<<< HEAD
+=======
+debug
+>>>>>>> be413f0a73829f442d4eab1e555ff23729b173f3
