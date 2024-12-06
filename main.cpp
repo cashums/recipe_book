@@ -9,6 +9,8 @@
 
 using namespace std;
 
+// function declerations
+User handleUserAuthentication();
 void filteringPage() {}
 
 // User* signUp(){
@@ -83,27 +85,7 @@ void mainMenu(User &user)
 int main()
 {
     Book book;
-    User *user_ptr = nullptr;
-    int userInput_int = 0;
-    User user;
-    cout << "Welcome to the Recipe Book!" << endl
-         << "Would you like to sign up for a new account or log in?" << endl
-         << "(enter 1 for sign up, 2 for log in): ";
-    cin >> userInput_int;
-
-    while (cin.fail() || (userInput_int != 1 && userInput_int != 2))
-    {
-        cout << "Your input is invalid. Please input again: ";
-        cin >> userInput_int;
-    }
-    if (userInput_int == 1)
-    {
-        user = *user.signUp();
-    }
-    else if (userInput_int == 2)
-    {
-        user = *user.logIn();
-    }
+    User user = handleUserAuthentication();
 
     mainMenu(user);
     book.viewAllRecipes();
@@ -114,4 +96,32 @@ int main()
     // book.viewAllRecipes(); // works
 
     return 1;
+}
+
+User handleUserAuthentication()
+{
+    User user;
+    int userInput_int = 0;
+    cout << "Welcome to the Recipe Book!" << endl
+         << "Would you like to sign up for a new account or log in?" << endl
+         << "(enter 1 for sign up, 2 for log in): ";
+    cin >> userInput_int;
+
+    while (cin.fail() || (userInput_int != 1 && userInput_int != 2))
+    {
+        cout << "Your input is invalid. Please input again: ";
+        cin.clear();
+        cin >> userInput_int;
+    }
+    if (userInput_int == 1)
+    {
+        return *user.signUp();
+    }
+    else if (userInput_int == 2)
+    {
+        return *user.logIn();
+    }
+    // Default case to ensure a return value
+    cerr << "Unexpected error during authentication. Exiting." << endl;
+    exit(1); // Or handle it more gracefully
 }
