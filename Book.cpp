@@ -35,9 +35,13 @@ void Book::viewAllRecipes() {
     cin >> choice;
     if (choice > 0 && choice <= currBook.size()) {
         currBook.at(choice - 1)->viewRecipe();
+        cout << endl;
+        Output::returnToMenu();
     } 
     else {
         cout << "Invalid choice!" << endl;
+        cout << endl;
+        Output::returnToMenu();
     }
 }
 

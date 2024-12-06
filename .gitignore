@@ -10,3 +10,4 @@ debug
 CTestTestfile.cmake
 /_deps
 test_search
+unitTests

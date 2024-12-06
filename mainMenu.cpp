@@ -35,12 +35,12 @@ void MainMenu::start() {
 void MainMenu::displayMenu() {
     Output::clearScreen();
     cout << "\nChoose what action you would like to take: "
-         << "\n\t1: View All Current Recipes. "
-         << "\n\t2: Add A New Recipe. "
-         << "\n\t3. Filter By Ingredient Name."
-         << "\n\t4. Favorite A Recipe."
-         << "\n\t5. View All Favorited Recipes"
-         << "\n\t6. Exit Program.\n";
+         << "\n\t1. View all current recipes. "
+         << "\n\t2. Add a new recipe. "
+         << "\n\t3. Search the Cookbook."
+         << "\n\t4. Favorite a recipe."
+         << "\n\t5. View all favorited recipes."
+         << "\n\t6. Exit Cookbook.\n";
 }
 
 void MainMenu::handleChoice(int choice) {
@@ -72,11 +72,16 @@ void MainMenu::handleChoice(int choice) {
             cin.clear();                                         // Clear the error flag on `cin`
             cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore invalid input
             cout << "Invalid input. Please enter a valid recipe number.\n";
-        } else {
+        } 
+        else {
             // Add the selected recipe to the favorite vector
             currentUser.addFavorRecipe(recipeIndex);
             cout << "Recipe added to favorites!" << endl;
         }
+
+        cout << endl;
+        Output::returnToMenu();
+
         break;
     case 5:
         Output::clearScreen();

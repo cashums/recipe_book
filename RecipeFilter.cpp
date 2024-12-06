@@ -21,14 +21,14 @@ string normalizeString(const string &str) {
     return normalized;
 }
 
-vector<Recipe *> unifiedSearchRecipes(const vector<Recipe *> &recipes,
-                                      const string &name = "",
-                                      const string &cuisine = "",
-                                      const vector<string> &tags = {},
-                                      const string &ingredient = "",
-                                      int minCalories = -1,
-                                      int maxCalories = -1,
-                                      int maxTotalTime = -1) {
+vector<Recipe *> searchRecipes(const vector<Recipe *> &recipes,
+                               const string &name = "",
+                               const string &cuisine = "",
+                               const vector<string> &tags = {},
+                               const string &ingredient = "",
+                               int minCalories = -1,
+                               int maxCalories = -1,
+                               int maxTotalTime = -1) {
     vector<Recipe *> filteredRecipes;
 
     string normalizedIngredient = normalizeString(ingredient); // Normalize input ingredient for comparison
@@ -153,26 +153,32 @@ void RecipeFilter::filteringPage() {
     cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clear the buffer after numeric input
 
     // Perform the search
-    vector<Recipe *> filteredRecipes = unifiedSearchRecipes(recipes, name, cuisine, tags, ingredient, minCalories, maxCalories, maxTotalTime);
+    vector<Recipe *> filteredRecipes = searchRecipes(recipes, name, cuisine, tags, ingredient, minCalories, maxCalories, maxTotalTime);
 
     // Display the results
     if (filteredRecipes.empty()) {
         cout << "No recipes found matching the criteria." << endl;
-    } else {
-        cout << endl << "Recipes found:" << endl;
+    } 
+    else {
+        cout << endl
+             << "Recipes found:" << endl;
         for (size_t i = 0; i < filteredRecipes.size(); ++i) {
             cout << i + 1 << ". " << filteredRecipes[i]->getName() << endl;
         }
 
         // Prompt user to view a recipe
-        cout << endl << "Enter the number of the recipe to view (or 0 to exit): ";
+        cout << endl
+             << "Enter the number of the recipe to view (or 0 to exit): ";
         int choice;
         cin >> choice;
 
         if (choice > 0 && choice <= filteredRecipes.size()) {
             filteredRecipes[choice - 1]->viewRecipe();
-        } else {
-            cout << "Invalid choice!" << endl;
+        } 
+        else if (choice != 0) {
+            cout << "Invalid choice!" << endl; 
         }
+        cout << endl;
+        Output::returnToMenu();
     }
 }
