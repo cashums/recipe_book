@@ -7,14 +7,6 @@
 #include <sstream>
 using namespace std;
 
-Parser::~Parser() {
-    // Clean up dynamically allocated memory in recipeBook
-    for (Recipe* recipe : recipeBook) {
-        delete recipe;
-    }
-    recipeBook.clear(); // Clear the vector to release all elements
-}
-
 vector<Recipe*> Parser::CSVparser()
 {
     // take in all data from recipe file first

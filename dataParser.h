@@ -14,7 +14,6 @@ using namespace std;
 class Parser
 {
 public:
-    int *recipeAmt;
     static vector<Recipe *> CSVparser();
     void writeToCSV(Recipe *recipe);
 };

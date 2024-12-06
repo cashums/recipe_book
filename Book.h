@@ -21,12 +21,4 @@ public:
     void viewAllRecipes();
 };
 
-// Destructor definition
-Book::~Book()
-{
-    for (Recipe *recipe : currBook)
-    {
-        delete recipe;
-    }
-    currBook.clear(); // Optional: ensures the vector is emptied
-}
+
