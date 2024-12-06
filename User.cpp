@@ -151,14 +151,63 @@ void User::readVecCSV(){
     }
     inputFile.close();
 }
-void User::writeVecCSV(vector<int>&){
+
+void User::writeVecCSV(vector<int>& vec){
     ifstream inputFile("users.csv");
     if (!inputFile.is_open()) {
         cerr << "Error: Could not open CSV file for reading." << endl;
         return;
     }
-    
-
-
+    vector<string> lines;
+    string line;
+    while (getline(inputFile, line)) {
+        lines.push_back(line);
+    }
     inputFile.close();
+
+    // Prepare to write updated data
+    ofstream outputFile("users.csv");
+    if (!outputFile.is_open()) {
+        cerr << "Error: Could not open CSV file for writing." << endl;
+        return;
+    }
+    for (size_t i = 0; i < lines.size(); ++i) {
+        stringstream ss(lines[i]);
+        string token;
+        vector<string> columns;
+
+        // Split the line into columns
+        while (getline(ss, token, ',')) {
+            columns.push_back(token);
+        }
+
+        // Ensure the line has at least 4 columns
+        if (columns.size() < 4) {
+            while (columns.size() < 4) {
+                columns.push_back(""); // Fill missing columns with empty strings
+            }
+        }
+
+        if (vec == searchingHistory_vec) {
+            // Update the third column if the vector has a corresponding value
+            if (i < vec.size()) {
+                columns[2] = to_string(vec[i]);
+            }
+        }else if (vec == favoriteRecipe_vec) {
+            if (i < vec.size()) {
+                columns[3] = to_string(vec[i]);
+            }
+        }
+
+        // Reassemble the line
+        string updatedLine = columns[0];
+        for (size_t j = 1; j < columns.size(); ++j) {
+            updatedLine += "," + columns[j];
+        }
+
+        // Write the updated line to the output file
+        outputFile << updatedLine << endl;
+    }
+
+    outputFile.close();
 }
