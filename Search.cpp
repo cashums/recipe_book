@@ -1,17 +1,24 @@
 #include "Book.h"
 
 #include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-vector<Recipe*> searchRecipes(const vector<Recipe*>& cookbook, const string& name = "", const string& cuisine = "", const vector<string>& tags = {}, int minCalories = -1, int maxCalories = -1, int maxTotalTime = -1)
-{
+vector<Recipe*> searchRecipes(const vector<Recipe*> &cookbook,
+                              const string &name = "",
+                              const string &cuisine = "",
+                              const vector<string> &tags = {},
+                              int minCalories = -1, int maxCalories = -1,
+                              int maxTotalTime = -1) {
     vector<Recipe*> results;
 
     for (Recipe* recipe : cookbook) {
         bool match = true;
 
-        if (!name.empty() && recipe->getName() != name)  {
+        if (!name.empty() && recipe->getName() != name) {
             match = false;
         }
 
@@ -20,11 +27,24 @@ vector<Recipe*> searchRecipes(const vector<Recipe*>& cookbook, const string& nam
         }
 
         if (!tags.empty()) {
+            bool tagMatch = true;
             for (const string& tag : tags) {
-                if (find(recipe->getTags().begin(), recipe->getTags().end(), tag) == recipe->getTags().end()) {
-                    match = false;
+                bool found = false;
+                for (const string& recipeTag : recipe->getTags()) {
+                    if (recipeTag == tag) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    tagMatch = false;
                     break;
                 }
+            }
+
+            if (!tagMatch) {
+                match = false;
             }
         }
 
@@ -42,6 +62,7 @@ vector<Recipe*> searchRecipes(const vector<Recipe*>& cookbook, const string& nam
 
         if (match) {
             results.push_back(recipe);
+            cout << "Match found: " << recipe->getName() << endl;
         }
     }
 
