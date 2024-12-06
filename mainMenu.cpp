@@ -37,7 +37,8 @@ void MainMenu::displayMenu()
          << "\nChoose what action you would like to take: "
          << "\n\t1: View All Current Recipes. "
          << "\n\t2: Add A New Recipe. "
-         << "\n\t3. Exit Program.\n";
+         << "\n\t3. Filter By Ingredient Name."
+         << "\n\t4. Exit Program.\n";
 }
 
 void MainMenu::handleChoice(int choice)
@@ -51,6 +52,8 @@ void MainMenu::handleChoice(int choice)
         book.addRecipe();
         break;
     case 3:
+         r.filteringPage();
+    case 4:
         cout << "\nExiting Program" << endl;
         isRunning = false;
         break;
