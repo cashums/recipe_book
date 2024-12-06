@@ -221,3 +221,15 @@ void User::writeVecCSV(vector<int>& vec){
 
     outputFile.close();
 }
+
+
+void User::printRecipe(const vector<int>& vec, const vector<Recipe*> &book){
+    if (vec.empty()){
+        cout << "\nStart searching your favorite recipes!" << endl;
+        return;
+    }
+    for (size_t i = 0; i < vec.size(); ++i){
+        Recipe* recipe_ptr = book[vec[i]];
+        recipe_ptr->viewRecipe();
+    }
+}

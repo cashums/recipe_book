@@ -13,7 +13,7 @@ class User{
 public:
     User* logIn();
     User* signUp();
-
+    virtual void printRecipe(const vector<int>&, const vector<Recipe*>&);
     void addSearchingHist(int&);
     void addFavorRecipe(int&);
     void readVecCSV();
@@ -22,6 +22,8 @@ public:
 
     string getUserName() {return userName;}
     string getUserPassword() {return password;}
+    vector<int> getSearchHistVec() {return searchingHistory_vec;}
+    vector<int> getFavRecVec() {return favoriteRecipe_vec;}
     bool userExist(const string&, const string& password = "");
 
     User();

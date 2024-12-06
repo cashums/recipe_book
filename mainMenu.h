@@ -18,7 +18,8 @@ private:
     Book book;
     User currentUser;
     bool isRunning;
-
+    vector<int> fav_recipe_vec;
+    vector<int> search_hist_vec;
     void handleAuthentication();
 
 public:
