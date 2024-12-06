@@ -143,4 +143,13 @@ Our program primarily utilizes a text-based interface, as no dedicated UI/UX fro
  > * Once running, simply follow along with user prompts to navigate the Cookbook. 
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > <img width="1170" alt="Screenshot 2024-12-06 at 11 33 17 AM" src="https://github.com/user-attachments/assets/dc7ec131-8a51-4aa2-8e2f-c9f979aa357f">
+ ><img width="1186" alt="Screenshot 2024-12-06 at 11 33 35 AM" src="https://github.com/user-attachments/assets/4a34b103-021f-49df-aeaf-207674090cbf">
+ ><img width="1194" alt="Screenshot 2024-12-06 at 11 34 02 AM" src="https://github.com/user-attachments/assets/57e85912-11f7-417b-9713-40ea1a326827">
+ ><img width="1195" alt="Screenshot 2024-12-06 at 11 34 15 AM" src="https://github.com/user-attachments/assets/d54a2a2b-ce2b-4339-b637-af8dd900a878">
+ > <img width="1186" alt="Screenshot 2024-12-06 at 11 34 35 AM" src="https://github.com/user-attachments/assets/db7c4adf-17fa-4347-9147-56f3fb74e951">
+
+
+
+
  
