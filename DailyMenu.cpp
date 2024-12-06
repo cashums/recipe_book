@@ -4,28 +4,22 @@
 #include <iostream>
 #include <cstdlib> // for rand() and srand()
 #include <ctime>   // for time()
+#include <algorithm>
 
 
 // No Destructor is needed Checked
 
-void DailyMenu::displayMenu(vector<Recipe> &menu) {
-    // Dummy function to simulate displaying a Recipe
-    cout << "-------------------------------------------" << endl
-         << "Here is your personalized daily menu!" << endl;
-    for (Recipe recipe : menu){
-        recipe.viewRecipe(); // Assuming Recipe has a getTitle() method
-        caloryTracker += recipe.getCalories();
-    }
-    cout << "The total calories of today's meals will be: " << caloryTracker << endl
-        << "-------------------------------------------";
-}
-
-void DailyMenu::generateMenu(Book& book, vector<Recipe>& fav_vec, vector<Recipe>& hist_vec){
-    vector<Recipe> combined;
+void DailyMenu::generateMenu(vector<Recipe*>& book, vector<int>& fav_vec, vector<int>& hist_vec){
+    vector<int> combined;
     // Insert elements of vec1 into combined
     combined.insert(combined.end(), fav_vec.begin(), fav_vec.end());
     // Insert elements of vec2 into combined
     combined.insert(combined.end(), hist_vec.begin(), hist_vec.end());
+
+    //remove duplication
+    sort(combined.begin(), combined.end());
+    auto last = unique(combined.begin(), combined.end());
+    combined.erase(last, combined.end());
 
     srand(time(0));
     int randomNum = 0;
@@ -34,15 +28,14 @@ void DailyMenu::generateMenu(Book& book, vector<Recipe>& fav_vec, vector<Recipe>
         cout << "Start your first new search to get a personalized daily menu recommendation!";
         return;
     }else if(combined.size() < 3){
-        // not enough data...
-        // since daily menu is under User, and User is a friend of Book
-        // so randomly choose more options from the recipe book
-        for (int i = 0; i < (3 - combined.size()); i++) {
-            // Randomly choose a recipe from the Book's recipe list
-            vector<Recipe*> allRecipes = book.getRecipe();
-            randomNum = rand() % allRecipes.size(); // Assuming Book has allRecipes as a vector<Recipe*>
-            Recipe randomRecipe = *allRecipes[randomNum];
-            combined.push_back(randomRecipe);
+        // find random new recipes from the book till total have three recipes in the combined vec
+        while (combined.size() < 3){
+            randomNum = rand() % book.size();
+            if (find(combined.begin(), combined.end(), randomNum) != combined.end()){
+                combined.push_back(randomNum);
+            }else{
+                randomNum = rand() % book.size();
+            }
         }
     }else {
         // ramdomly pick three recipes from the vector
@@ -51,5 +44,20 @@ void DailyMenu::generateMenu(Book& book, vector<Recipe>& fav_vec, vector<Recipe>
             combined.erase(combined.begin() + randomNum);
         }
     }
-    displayMenu(combined);
+}
+
+void DailyMenu::printRecipe(const vector<int>& vec, const vector<Recipe*>& book) {
+    if (vec.empty()){
+        cout << "\nStart searching your favorite recipes!" << endl;
+        return;
+    }
+    int totalCalories = 0;
+    cout << "\n------------Here is your daily menu recommendation------------" << endl;
+    for (size_t i = 0; i < vec.size(); ++i) {
+        Recipe* recipe_ptr = book[vec[i]];
+        recipe_ptr->viewRecipe(); // Call the base functionality
+        totalCalories += recipe_ptr->getCalories();
+    }
+
+    cout << "\nTotal Calories of Recommended Recipes: " << totalCalories << endl;
 }

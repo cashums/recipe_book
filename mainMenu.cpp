@@ -38,7 +38,10 @@ void MainMenu::displayMenu()
          << "\n\t1: View All Current Recipes. "
          << "\n\t2: Add A New Recipe. "
          << "\n\t3. Filter By Ingredient Name."
-         << "\n\t4. Exit Program.\n";
+         << "\n\t4. Exit Program.\n"
+         << "\n\t3. Check Out Favorite Recipe."
+         << "\n\t4. Check Out Searching History."
+         << "\n\t5. Exit Program.\n";
 }
 
 void MainMenu::handleChoice(int choice)
@@ -58,6 +61,14 @@ void MainMenu::handleChoice(int choice)
         cout << "\nExiting Program" << endl;
         isRunning = false;
         break;
+    // case 4:
+    //     fav_recipe_vec = currentUser.getFavRecVec();
+    //     currentUser.printRecipe(fav_recipe_vec, book.getBook());
+    //     break;
+    // case 5:
+    //     search_hist_vec = currentUser.getSearchHistVec();
+    //     currentUser.printRecipe(search_hist_vec, book.getBook());
+    //     break;
     default:
         cout << "invalid choice (switch case branch)";
         break;

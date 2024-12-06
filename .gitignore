@@ -6,3 +6,6 @@ cmake_install.cmake
 runCode
 a.out
 debug
+/lib
+CTestTestfile.cmake
+/_deps

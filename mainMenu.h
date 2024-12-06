@@ -21,6 +21,8 @@ private:
     bool isRunning;
     RecipeFilter r;
 
+    vector<int> fav_recipe_vec;
+    vector<int> search_hist_vec;
     void handleAuthentication();
 
 public:
