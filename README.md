@@ -60,9 +60,14 @@ What are the features that the project provides?
 >![image](https://github.com/user-attachments/assets/4af77db9-1ec2-4ad3-adbe-36be406072c1)
 
 
+### Updated Screen Layouts
 
-
-
+> * main menu
+>  * view all recipes
+>  * add new recipe
+>  * filter by ingredients
+>  * favorite a recipe
+>  * View All Favorited Recipes
 
 
 
