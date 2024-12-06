@@ -65,14 +65,15 @@ Our program primarily utilizes a text-based interface, as no dedicated UI/UX fro
 
 > * **log in/ sign up**: user is able to either sign up a new account or log in to existed account. Once done, program automatically jump to main menu.
 > * **main menu**: After completing any function, the program automatically returns to the main menu for ease of navigation.
->       * **view all recipes**: Displays all available recipe options. Users can select and print a recipe by entering its corresponding index.
+>    * **view all recipes**: Displays all available recipe options. Users can select and print a recipe by entering its corresponding index.
 >       * **add new recip**e: Allows users to add a new recipe to the database by entering the attributes step by step.
 >       * **filter by ingredients**: enables users to search the recipe book using specific ingredients as filtering criteria.
 >       * **favorite a recipe**: After viewing all recipes, users can mark a recipe as a favorite by entering its index.
 >       * **View All Favorited Recipes**: Displays detailed information about all recipes marked as favorites.
 
 
-
+>- **Page Relationships**:
+>      - **Favorites and History**: From the main page, users can access their **favorite recipes** or **search history**. Both of the pages have a button to navigate user to go back to the main page.
 
 ## Class Diagram
  ![UML class (2)](https://github.com/user-attachments/assets/a7c80c52-e7df-4ea6-bdba-ed99daef9534)
