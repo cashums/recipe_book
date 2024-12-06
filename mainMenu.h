@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Book.h"
+#include "User.h"
 #include "dataParser.h"
 
 #include <string>
@@ -9,7 +10,18 @@
 
 using namespace std;
 
-class mainMenu {
+class MainMenu
+{
+private:
+    Book book;
+    User currentUser;
+    bool isRunning;
+
+    void handleAuthentication();
+
 public:
-    void printTitleScreen();
+    void start();
+    void displayMenu();
+    void handleChoice(int choice);
+    MainMenu();
 };
