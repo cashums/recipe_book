@@ -61,8 +61,6 @@ void Recipe::viewRecipe() {
 
     cout << "-----------------------------" << endl
          << endl;
-
-    Output::returnToMenu();
 }
 
 string Recipe::getName() {

@@ -175,8 +175,10 @@ void RecipeFilter::filteringPage() {
         if (choice > 0 && choice <= filteredRecipes.size()) {
             filteredRecipes[choice - 1]->viewRecipe();
         } 
-        else {
-            cout << "Invalid choice!" << endl;
+        else if (choice != 0) {
+            cout << "Invalid choice!" << endl; 
         }
+        cout << endl;
+        Output::returnToMenu();
     }
 }

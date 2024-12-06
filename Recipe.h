@@ -23,6 +23,7 @@ private:
 public:
     string rawNutritionData;
     void clearScreen();
+    Recipe();
     Recipe(string name, vector<string> ingredientNames, vector<string> ingredientQuantities, vector<string> directions, int calories, vector<string> tags, string cuisine, string foodType, int prepTime, int cookTime);
     void setRecipeID(int id);
     void viewRecipe();
