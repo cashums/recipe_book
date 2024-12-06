@@ -1,6 +1,8 @@
-#include "Recipe.h"
+#include "Recipe.h" 
 #include <iostream>
 using namespace std;
+
+// Destructor Added
 
 // default constructor assigning a 0 or blank to all inputs if not specified by user
 Recipe::Recipe(string name = "", vector<string> ingredientNames = {}, vector<string> ingredientQuantities = {}, vector<string> directions = {}, int calories = 0, vector<string> tags = {}, string cuisine = "", string foodType = "", int prepTime = 0, int cookTime = 0)
@@ -131,6 +133,7 @@ int Recipe::getCalories()
     return this->calories;
 }
 
+// Destructor (no extra cleanup needed)
 Recipe::~Recipe()
 {
 }

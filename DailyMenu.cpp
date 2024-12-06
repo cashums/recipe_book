@@ -6,6 +6,8 @@
 #include <ctime>   // for time()
 
 
+// No Destructor is needed Checked
+
 void DailyMenu::displayMenu(vector<Recipe> &menu) {
     // Dummy function to simulate displaying a Recipe
     cout << "-------------------------------------------" << endl
