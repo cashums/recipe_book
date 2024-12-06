@@ -159,13 +159,13 @@ void RecipeFilter::filteringPage() {
     if (filteredRecipes.empty()) {
         cout << "No recipes found matching the criteria." << endl;
     } else {
-        cout << "Recipes found:" << endl;
+        cout << endl << "Recipes found:" << endl;
         for (size_t i = 0; i < filteredRecipes.size(); ++i) {
             cout << i + 1 << ". " << filteredRecipes[i]->getName() << endl;
         }
 
         // Prompt user to view a recipe
-        cout << "Enter the number of the recipe to view (or 0 to exit): ";
+        cout << endl << "Enter the number of the recipe to view (or 0 to exit): ";
         int choice;
         cin >> choice;
 

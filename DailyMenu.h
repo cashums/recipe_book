@@ -2,6 +2,8 @@
 
 #include "User.h"
 #include "Recipe.h"
+#include "Output.h"
+
 #include <vector>
 
 // No destructor is Needed Checked: 
