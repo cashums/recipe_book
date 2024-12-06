@@ -2,9 +2,9 @@
 
 #include "User.h"
 #include "Recipe.h"
-
 #include <vector>
 
+// No destructor is Needed Checked: 
 class DailyMenu : public User{
     int caloryTracker;
 public:
