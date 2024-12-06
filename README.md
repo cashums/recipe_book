@@ -61,13 +61,15 @@ What are the features that the project provides?
 
 
 ### Updated Screen Layouts
+Our program primarily utilizes a text-based interface, as no dedicated UI/UX frontend has been implemented. However, users can seamlessly access and navigate between all features from the main menu. Below is a summary of the program's features:
 
-> * main menu
->  * view all recipes
->  * add new recipe
->  * filter by ingredients
->  * favorite a recipe
->  * View All Favorited Recipes
+> * **log in/ sign up**: user is able to either sign up a new account or log in to existed account. Once done, program automatically jump to main menu.
+> * **main menu**: After completing any function, the program automatically returns to the main menu for ease of navigation.
+>       * **view all recipes**: Displays all available recipe options. Users can select and print a recipe by entering its corresponding index.
+>       * **add new recip**e: Allows users to add a new recipe to the database by entering the attributes step by step.
+>       * **filter by ingredients**: enables users to search the recipe book using specific ingredients as filtering criteria.
+>       * **favorite a recipe**: After viewing all recipes, users can mark a recipe as a favorite by entering its index.
+>       * **View All Favorited Recipes**: Displays detailed information about all recipes marked as favorites.
 
 
 
