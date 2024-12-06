@@ -15,7 +15,7 @@ Parser::~Parser() {
     recipeBook.clear(); // Clear the vector to release all elements
 }
 
-vector<Recipe *> Parser::CSVparser()
+vector<Recipe*> Parser::CSVparser()
 {
     // take in all data from recipe file first
     ifstream CSVreader("recipes.csv");
@@ -137,6 +137,7 @@ vector<Recipe *> Parser::CSVparser()
         // create a Recipe object from parsed information
         Recipe *newRecipe = new Recipe(name, ingredientNames, ingredientQuantities, directions, calories, tags, cuisine, foodType, prepTime, cookTime);
         recipeBook.push_back(newRecipe);
+        newRecipe->setRecipeID(recipeBook.size());
     }
 
     CSVreader.close();

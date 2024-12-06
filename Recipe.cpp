@@ -20,6 +20,11 @@ Recipe::Recipe(string name = "", vector<string> ingredientNames = {}, vector<str
     totalTime = (prepTime + cookTime);
 }
 
+void Recipe::setRecipeID(int id) 
+{
+    this->recipeID = id;
+}
+
 /*Recipe::Recipe(string name, vector<string> ingredientNames, vector<string> ingredientQuantities, vector<string> directions, int calories, vector<string> tags, string cuisine, string foodType, int prepTime, int cookTime) {
     recipeName = name;
     this->ingredientNames = ingredientNames;
@@ -38,6 +43,7 @@ void Recipe::viewRecipe()
 {
     // Display the recipe details
     cout << "-----------------------------" << endl;
+    cout << "Recipe ID: " << recipeID << endl;
     cout << "Recipe Name: " << recipeName << endl;
     cout << "Cuisine: " << cuisine << endl;
     cout << "Type: " << foodType << endl;
