@@ -37,7 +37,7 @@ void MainMenu::displayMenu()
          << "\nChoose what action you would like to take: "
          << "\n\t1: View All Current Recipes. "
          << "\n\t2: Add A New Recipe. "
-         << "\n\t3. Filter By Ingredient Name."
+         << "\n\t3. Search through Cookbook."
          << "\n\t4. Exit Program.\n"
          << "\n\t3. Check Out Favorite Recipe."
          << "\n\t4. Check Out Searching History."
