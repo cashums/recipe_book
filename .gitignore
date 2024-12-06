@@ -8,5 +8,3 @@ a.out
 debug
 /lib
 CTestTestfile.cmake
-/googletest
-
