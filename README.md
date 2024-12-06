@@ -16,11 +16,13 @@ Input/Output
 >  The project will have two primary functions: 
 >  * Users can create, store, view, and edit recipes to be stored in a greater recipe book.
 >  * Users can navigate an existing recipe book to find entries matching user-selected filters, such as containing certain ingredients, meeting dietary restrictions, range of calories, rating. For example, when searching the book, a user should select any of the filtering conditions:
->      *  [checkbox] "What ingredients would you like to cook with?"
->      * 	[checkbox] “Do you have any dietary restrictions?”
->      * 	[user input] “Would you like to set a calorie range for your meal (Unit in K)?”
->      *  [checkbox] "The rating of the food: "
->      *  [user input] "Search by name: "
+>      *  [user input] "Enter the recipe name (leave empty for any):  "
+>      *  [user input] "Enter the cuisine type (leave empty for any):   "
+>      * 	[user input] “Enter tags separated by commas (leave empty for any):”
+>      * 	[user input] “Enter an ingredient (leave empty for any): ”
+>      *  [user input] "Enter minimum calories (enter -1 for no minimum):"
+>      *  [user input] "Enter maximum calories (enter -1 for no maximum):"
+>      *  [user input] "Enter maximum total time in minutes (enter -1 for no limit):"
 >    	
 What are the features that the project provides?
 >  * 	Search engine for recipes
