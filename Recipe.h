@@ -16,11 +16,11 @@ private:
     string cuisine, foodType;
     int prepTime, cookTime, totalTime;
     // double rating;
-
 public:
     string rawNutritionData;
-    Recipe();
+    //Recipe();
     Recipe(string name, vector<string> ingredientNames, vector<string> ingredientQuantities, vector<string> directions, int calories, vector<string> tags, string cuisine, string foodType, int prepTime, int cookTime);
+    void setRecipeID(int id);
     void viewRecipe();
     vector<string> getIngredientNames();
     vector<string> getIngredientQuantities();
