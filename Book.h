@@ -13,9 +13,12 @@ private:
     vector<Recipe*> currBook;
 public:
     Book();
-    vector<Recipe*> getBook();
+    ~Book(); // Destructor declaration
+    vector<Recipe *> getBook();
     void addRecipe();
     Recipe* findRecipeByID(int id);
     void deleteRecipe();
     void viewAllRecipes();
 };
+
+

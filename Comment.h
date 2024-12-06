@@ -3,6 +3,8 @@
 #include <iostream>
 using namespace std;
 
+// Checked for Destrctor No Needed
+
 class Comment
 {
 private:
