@@ -137,13 +137,14 @@ Our program primarily utilizes a text-based interface, as no dedicated UI/UX fro
  ## Installation/Usage
  > Instructions on installing and running your application
  > * To install, download the repository. The Google Test repository is not required for individual download due to being bundled within CMake.
- >  * To run, run the following command:
+ >   * To run, run the following command:
  >       * clear && cmake . && make && ./runCode
  >  * This will clear any previous output from your terminal, compile, and execute the code.
  > * Once running, simply follow along with user prompts to navigate the Cookbook. 
  ## Testing
  > * log in function/ sign up function:
- >  * the validation is included in the function using a while loop. Untill the user input valid, the while loop breaks.
+ >   * the validation is included in the function using a while loop. Untill the user input valid, the while loop breaks.
+>    * <img width="725" alt="Screenshot 2024-12-06 at 11 48 38 AM" src="https://github.com/user-attachments/assets/56c2f613-63b9-4185-98db-2aeb1784643b">
  > * 
  > * search function unit tests:
  > <img width="1170" alt="Screenshot 2024-12-06 at 11 33 17 AM" src="https://github.com/user-attachments/assets/dc7ec131-8a51-4aa2-8e2f-c9f979aa357f">
