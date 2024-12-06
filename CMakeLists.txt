@@ -27,6 +27,7 @@ add_executable(runCode
     main.cpp
     Book.cpp
     User.cpp
+    Output.cpp
 )
 
 # Add the test executable
@@ -36,6 +37,7 @@ add_executable(test_search
     Book.cpp
     User.cpp
     dataParser.cpp
+    Output.cpp
 )
 
 # Link the test executable to the Google Test libraries

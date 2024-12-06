@@ -4,6 +4,7 @@
 #include "User.h"
 #include "dataParser.h"
 #include "RecipeFilter.h"
+#include "Output.h"
 
 #include <string>
 #include <iostream>

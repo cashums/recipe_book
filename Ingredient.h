@@ -1,9 +1,6 @@
-#ifndef INGREDIENT_H
-#define INGREDIENT_H
+#pragma once
 
 #include <string>
-
-
 
 class Ingredient {
 private:
@@ -30,5 +27,3 @@ public:
     bool isDietSuitable(const std::string &dietType) const;
     std::string getInfo() const;
 };
-
-#endif // INGREDIENT_H
