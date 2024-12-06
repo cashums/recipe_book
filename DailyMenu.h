@@ -2,13 +2,14 @@
 
 #include "User.h"
 #include "Recipe.h"
-
 #include <vector>
 
+// No destructor is Needed Checked: 
 class DailyMenu : public User{
-    int caloryTracker;
+private:
+    vector<int> dailyMenu{0,0,0};
 public:
-    vector<Recipe> dailyMenu[3];
-    void generateMenu(Book&, vector<Recipe>&, vector<Recipe>&);
-    void displayMenu(vector<Recipe> &);
+    void generateMenu(vector<Recipe*>&, vector<int>&, vector<int>&);
+    vector<int> getDailyMenu() {return dailyMenu;}
+    void printRecipe(const vector<int>& vec, const vector<Recipe*>& book) override;
 };

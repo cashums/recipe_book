@@ -1,5 +1,7 @@
 #include "Ingredient.h"
 
+
+
 // Constructor
 Ingredient::Ingredient(int id, const std::string &name, int cals, char allergen, const std::string &diet)
     : ingredientID(id), name(name), calsPerServing(cals), allergens(allergen), dietRestrictions(diet) {}

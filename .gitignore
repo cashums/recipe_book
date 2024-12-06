@@ -5,3 +5,7 @@ cmake_install.cmake
 /CMakeFiles
 runCode
 a.out
+debug
+/lib
+CTestTestfile.cmake
+/_deps

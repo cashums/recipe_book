@@ -1,16 +1,56 @@
 #include "Book.h"
 #include "Recipe.h"
+#include "dataParser.h"
 
 #include <sstream>
 #include <iostream>
 
 using namespace std;
 
-vector<Recipe*> Book::getBook() {
+Book::Book()
+{
+    currBook = Parser::CSVparser();
+}
+
+Book::~Book()
+{
+    // Free dynamically allocated memory
+    for (Recipe *recipe : currBook)
+    {
+        delete recipe;
+    }
+    currBook.clear(); // Optional, but ensures the vector is empty
+}
+
+vector<Recipe *> Book::getBook()
+{
     return currBook;
 }
 
-void Book::addRecipe() {
+void Book::viewAllRecipes()
+{
+    // Display all recipes
+    cout << "Available Recipes:\n";
+    for (size_t i = 0; i < currBook.size(); i++)
+    {
+        cout << i + 1 << ": " << currBook.at(i)->getName() << endl;
+    }
+    // Allow user to view a specific recipe
+    cout << "Enter the number of the recipe to view: ";
+    int choice;
+    cin >> choice;
+    if (choice > 0 && choice <= currBook.size())
+    {
+        currBook.at(choice - 1)->viewRecipe();
+    }
+    else
+    {
+        cout << "Invalid choice!" << endl;
+    }
+}
+
+void Book::addRecipe()
+{
     cin.ignore();
 
     string name, cuisine, foodType;
@@ -21,7 +61,8 @@ void Book::addRecipe() {
     getline(cin, name);
 
     cout << "\nEnter ingredients (type 'done' when finished):\n";
-    while (true) {
+    while (true)
+    {
         string ingredient, quantity;
         cout << "\n\tIngredient name: ";
         getline(cin, ingredient);
@@ -36,7 +77,8 @@ void Book::addRecipe() {
     }
 
     cout << "\nEnter Directions (type 'done' when finished):\n";
-    while (true) {
+    while (true)
+    {
         string direction;
         cout << "Step: ";
         getline(cin, direction);
@@ -50,7 +92,8 @@ void Book::addRecipe() {
     cin.ignore(); // Clear input buffer
 
     cout << "\nEnter Tags (type 'done' when finished):\n";
-    while (true) {
+    while (true)
+    {
         string tag;
         cout << "Tag: ";
         getline(cin, tag);
@@ -71,12 +114,26 @@ void Book::addRecipe() {
     cout << "\nEnter cook time (in minutes): ";
     cin >> cookTime;
 
-    Recipe* newRecipe = new Recipe (name, ingredientNames, ingredientQuantities, instructions, calories, tags, cuisine, foodType, prepTime, cookTime);
+    Recipe* newRecipe = new Recipe(name, ingredientNames, ingredientQuantities, instructions, calories, tags, cuisine, foodType, prepTime, cookTime);
     currBook.push_back(newRecipe);
+    //currBook.back()->setRecipeID(currBook.size());
+    newRecipe->setRecipeID(currBook.size());
 
+    Parser p;
+    p.writeToCSV(newRecipe);
     cout << "\nNew Recipe Added: " << name << endl;
 }
 
-void Book::deleteRecipe() {
+Recipe* Book::findRecipeByID(int id) 
+{
+    if (id > 0 && id <= currBook.size())
+    {
+        return currBook.at(id - 1); // IDs start at 1, so adjust index
+    }
+    return nullptr;
+}
+
+void Book::deleteRecipe()
+{
     // filler
 }

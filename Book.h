@@ -7,10 +7,18 @@
 
 using namespace std;
 
-class Book {
+class Book
+{
+private:
     vector<Recipe*> currBook;
 public:
-    vector<Recipe*> getBook();
+    Book();
+    ~Book(); // Destructor declaration
+    vector<Recipe *> getBook();
     void addRecipe();
+    Recipe* findRecipeByID(int id);
     void deleteRecipe();
+    void viewAllRecipes();
 };
+
+
