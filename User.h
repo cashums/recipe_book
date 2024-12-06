@@ -26,6 +26,7 @@ public:
 
     User();
     User(string&, string&);
+    ~User();
 
 private:
     string userName = "";
