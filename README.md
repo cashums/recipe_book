@@ -73,8 +73,6 @@ Our program primarily utilizes a text-based interface, as no dedicated UI/UX fro
 >    * **favorite a recipe**: After viewing all recipes, users can mark a recipe as a favorite by entering its index.
 >    * **View All Favorited Recipes**: Displays detailed information about all recipes marked as favorites.
 
-## Class Diagram
- ![UML class (2)](https://github.com/user-attachments/assets/a7c80c52-e7df-4ea6-bdba-ed99daef9534)
 
 
  > * Recipe
@@ -91,7 +89,8 @@ Our program primarily utilizes a text-based interface, as no dedicated UI/UX fro
 >       * The sum collection of all recipes as one unified recipe book; the purpose of the application. Stores, manages, and sorts through all of a user's saved recipes.
 
 ## Updated Class Diagram
-![UML class - Page 2 (1)](https://github.com/user-attachments/assets/ae45273b-13b0-4630-a186-989dee676e6b)
+![UML class - Page 5](https://github.com/user-attachments/assets/e44f8de3-a0c3-455d-8cd4-580c23ff73e7)
+
 
  > * SOLID Principles:
  >   * Originally, the Recipe class was far too bloated and filled with too many member variables and member functions. After updating, the main components of a Recipe (Metadata, Steps, Comments, and Ingredients) have been placed into their own classes which aggregate into Recipe. This change more closely conforms to the Single Responsibility Principle, which makes Recipe as a whole easier to test, understand, and modify.
