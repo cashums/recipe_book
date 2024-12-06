@@ -11,6 +11,7 @@ void MainMenu::start()
 {
     handleAuthentication();
 
+    cout << "\n------------Welcome to Recipe Book------------" << endl;
     while (isRunning)
     {
         displayMenu();
@@ -33,15 +34,13 @@ void MainMenu::start()
 
 void MainMenu::displayMenu()
 {
-    cout << "\n------------Welcome to Recipe Book------------" << endl
-         << "\nChoose what action you would like to take: "
+    cout << "\nChoose what action you would like to take: "
          << "\n\t1: View All Current Recipes. "
          << "\n\t2: Add A New Recipe. "
          << "\n\t3. Filter By Ingredient Name."
-         << "\n\t4. Exit Program.\n"
-         << "\n\t3. Check Out Favorite Recipe."
-         << "\n\t4. Check Out Searching History."
-         << "\n\t5. Exit Program.\n";
+         << "\n\t4. Favorite A Recipe."
+         << "\n\t5. View All Favorited Recipes"
+         << "\n\t6. Exit Program.\n";
 }
 
 void MainMenu::handleChoice(int choice)
@@ -55,20 +54,51 @@ void MainMenu::handleChoice(int choice)
         book.addRecipe();
         break;
     case 3:
-         r.filteringPage();
-         break;
+        r.filteringPage();
+        break;
     case 4:
+        // Display all recipes
+        cout << "\nHere are the available recipes: " << endl;
+        book.viewAllRecipes(); // Assuming this displays recipes with indices
+
+        // Ask the user which recipe to favorite
+        cout << "\nEnter the recipe number you'd like to favorite: ";
+        int recipeIndex;
+        cin >> recipeIndex;
+
+        if (cin.fail() || recipeIndex < 0 || recipeIndex >= book.getBook().size())
+        {
+            cin.clear();                                         // Clear the error flag on `cin`
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore invalid input
+            cout << "Invalid input. Please enter a valid recipe number.\n";
+        }
+        else
+        {
+            // Add the selected recipe to the favorite vector
+            currentUser.addFavorRecipe(recipeIndex);
+            cout << "Recipe added to favorites!" << endl;
+        }
+        break;
+    case 5:
+        // Fetch favorite recipes vector from the user
+        fav_recipe_vec = currentUser.getFavRecVec();
+
+        // Check if the favorite recipe list is empty
+        if (fav_recipe_vec.empty())
+        {
+            cout << "You don't have any favorite recipes yet. Add some to your favorites!" << endl;
+        }
+        else
+        {
+            // Display the favorite recipes using the user's printRecipe method
+            cout << "\nHere are your favorite recipes: " << endl;
+            currentUser.printRecipe(fav_recipe_vec, book.getBook());
+        }
+        break;
+    case 6:
         cout << "\nExiting Program" << endl;
         isRunning = false;
         break;
-    // case 4:
-    //     fav_recipe_vec = currentUser.getFavRecVec();
-    //     currentUser.printRecipe(fav_recipe_vec, book.getBook());
-    //     break;
-    // case 5:
-    //     search_hist_vec = currentUser.getSearchHistVec();
-    //     currentUser.printRecipe(search_hist_vec, book.getBook());
-    //     break;
     default:
         cout << "invalid choice (switch case branch)";
         break;
