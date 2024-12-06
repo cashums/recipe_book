@@ -64,7 +64,18 @@ void RecipeFilter::filteringPage() {
     } else {
         cout << "Recipes containing \"" << ingredient << "\":" << endl;
         for (Recipe* recipe : filteredRecipes) {
-            cout << "- " << recipe->getName() << endl;
+            cout << recipe->getrecipeID() << " " << recipe->getName() << endl;
         }
+    }
+    cout << "Enter the number of the recipe to view: ";
+    int choice;
+    cin >> choice;
+    if (choice > 0 && choice <= filteredRecipes.size())
+    {
+        filteredRecipes[choice - 1]->viewRecipe(); // View the selected recipe
+    }
+    else
+    {
+        cout << "Invalid choice!" << endl;
     }
 }

@@ -53,6 +53,7 @@ void MainMenu::handleChoice(int choice)
         break;
     case 3:
          r.filteringPage();
+         break;
     case 4:
         cout << "\nExiting Program" << endl;
         isRunning = false;

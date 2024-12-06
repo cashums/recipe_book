@@ -1,3 +1,5 @@
+// RecipeFilter.h
+
 #pragma once
 
 #include "Recipe.h"
@@ -12,5 +14,5 @@ public:
     static vector<Recipe*> filterByIngredient(const vector<Recipe*>& recipes, const string& ingredient);
 
     // Filtering page, which interacts with the user
-    static void filteringPage();
+    static void filteringPage(); // Declaration of filteringPage
 };
