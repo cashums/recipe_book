@@ -31,20 +31,21 @@ add_executable(runCode
 )
 
 # Add the test executable
-add_executable(test_search 
+add_executable(unitTests
     test/SearchTests.cpp
+    dataParser.cpp
     Recipe.cpp
+    RecipeFilter.cpp
     Book.cpp
     User.cpp
-    dataParser.cpp
     Output.cpp
 )
 
 # Link the test executable to the Google Test libraries
-target_link_libraries(test_search gtest gtest_main pthread)
+target_link_libraries(unitTests gtest gtest_main pthread)
 
 # Enable testing
 enable_testing()
 
 # Add the test to the list of tests
-add_test(NAME SearchTests COMMAND test_search)
+add_test(NAME SearchTests COMMAND unitTests)

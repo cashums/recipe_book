@@ -1,4 +1,4 @@
-#include "../Search.cpp"
+#include "../RecipeFilter.cpp"
 #include "gtest/gtest.h"
 
 #include <vector>
@@ -12,10 +12,10 @@ TEST(SearchRecipesTest, SearchByName) {
 
     vector<Recipe*> cookbook = {recipe1, recipe2};
 
-    vector<Recipe*> result = searchRecipes(cookbook, "Pasta Primavera");
+    vector<Recipe*> filteredRecipes = searchRecipes(cookbook, "Pasta Primavera");
 
-    ASSERT_EQ(result.size(), 1); // only one recipe matches "Pasta Primavera"
-    EXPECT_EQ(result[0]->getName(), "Pasta Primavera");
+    ASSERT_EQ(filteredRecipes.size(), 1); // only one recipe matches "Pasta Primavera"
+    EXPECT_EQ(filteredRecipes[0]->getName(), "Pasta Primavera");
 
     for (Recipe* recipe : cookbook) {
         delete recipe;
@@ -28,10 +28,10 @@ TEST(SearchRecipesTest, SearchByCuisine) {
 
     vector<Recipe*> cookbook = {recipe1, recipe2};
 
-    vector<Recipe*> result = searchRecipes(cookbook, "", "Italian");
+    vector<Recipe*> filteredRecipes = searchRecipes(cookbook, "", "Italian");
 
-    ASSERT_EQ(result.size(), 1); // only "Pasta Primavera" matches the Italian cuisine
-    EXPECT_EQ(result[0]->getCuisine(), "Italian");
+    ASSERT_EQ(filteredRecipes.size(), 1); // only "Pasta Primavera" matches the Italian cuisine
+    EXPECT_EQ(filteredRecipes[0]->getCuisine(), "Italian");
 
     for (Recipe* recipe : cookbook) {
         delete recipe;
@@ -44,10 +44,10 @@ TEST(SearchRecipesTest, SearchByTags) {
 
     vector<Recipe*> cookbook = {recipe1, recipe2};
 
-    vector<Recipe*> result = searchRecipes(cookbook, "", "", {"Vegetarian", "Healthy"});
+    vector<Recipe*> filteredRecipes = searchRecipes(cookbook, "", "", {"Vegetarian", "Healthy"});
 
-    ASSERT_EQ(result.size(), 1); // only "Pasta Primavera" matches both "Vegetarian" and "Healthy" tags
-    EXPECT_EQ(result[0]->getTags(), vector<string>({"Vegetarian", "Fresh", "Italian", "Kid-friendly", "Quick", "Comfort food", "Healthy", "Low-calorie", "Summer", "Easy"}));
+    ASSERT_EQ(filteredRecipes.size(), 1); // only "Pasta Primavera" matches both "Vegetarian" and "Healthy" tags
+    EXPECT_EQ(filteredRecipes[0]->getTags(), vector<string>({"Vegetarian", "Fresh", "Italian", "Kid-friendly", "Quick", "Comfort food", "Healthy", "Low-calorie", "Summer", "Easy"}));
 
     for (Recipe* recipe : cookbook) {
         delete recipe;
@@ -60,11 +60,11 @@ TEST(SearchRecipesTest, SearchByCalories) {
 
     vector<Recipe*> cookbook = {recipe1, recipe2};
 
-    vector<Recipe*> result = searchRecipes(cookbook, "", "", {}, 400, 500);
+    vector<Recipe *> filteredRecipes = searchRecipes(cookbook, "", "", {}, 400, 500);
 
-    ASSERT_EQ(result.size(), 2); // both recipes match the calorie range of 400–500
-    EXPECT_EQ(result[0]->getCalories(), 500);
-    EXPECT_EQ(result[1]->getCalories(), 450);
+    ASSERT_EQ(filteredRecipes.size(), 2); // both recipes match the calorie range of 400–500
+    EXPECT_EQ(filteredRecipes[0]->getCalories(), 500);
+    EXPECT_EQ(filteredRecipes[1]->getCalories(), 450);
 
     for (Recipe* recipe : cookbook) {
         delete recipe;
@@ -77,10 +77,10 @@ TEST(SearchRecipesTest, SearchByTime) {
 
     vector<Recipe*> cookbook = {recipe1, recipe2};
 
-    vector<Recipe*> result = searchRecipes(cookbook, "", "", {}, -1, -1, 20);
+    vector<Recipe*> filteredRecipes = searchRecipes(cookbook, "", "", {}, -1, -1, 20);
 
-    ASSERT_EQ(result.size(), 1); // only "Pasta Primavera" matches total time <= 20 minutes
-    EXPECT_EQ(result[0]->getTotalTime(), 20);
+    ASSERT_EQ(filteredRecipes.size(), 1); // only "Pasta Primavera" matches total time <= 20 minutes
+    EXPECT_EQ(filteredRecipes[0]->getTotalTime(), 20);
 
     for (Recipe* recipe : cookbook) {
         delete recipe;
