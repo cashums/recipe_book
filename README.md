@@ -102,9 +102,40 @@ What are the features that the project provides?
 >  * Each team member should also submit the Individual Contributions Form on Canvas for this final phase. In this form, you need to fill in the names of all team members, the percentage of work contributed by each member for the final phase, and a description of their contributions. Remember that each team member should submit the form individually.
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ > ![Screenshot 2024-12-06 092052](https://github.com/user-attachments/assets/fee97e87-c163-4be9-a867-7683f0410f64)
+ > * The log-in screen.
+ >
+ >
+ >
+ > ![Screenshot 2024-12-06 092102](https://github.com/user-attachments/assets/9a999b4b-e9ec-4d3e-a669-593656e2fd0a)
+> * Main menu.
+>
+>
+>
+ > ![Screenshot 2024-12-06 092149](https://github.com/user-attachments/assets/69a80eb7-1f4d-457e-b4fa-91cff2498e8e)
+> * Viewing all Recipes.
+>
+>
+>  
+ > ![Screenshot 2024-12-06 092520](https://github.com/user-attachments/assets/da766bf3-4cb0-45a5-9c80-a8ef47316522)
+> * Viewing a single Recipe in detail.
+>
+>
+> 
+ > ![Screenshot 2024-12-06 092551](https://github.com/user-attachments/assets/11fb60a9-5eb5-4e68-b95e-325026d69f2f)
+> * Searching (in this case, by Ingredient).
+>
+>
+>   
+
+
  ## Installation/Usage
  > Instructions on installing and running your application
+ > * To install, download the repository. The Google Test repository is not required for individual download due to being bundled within CMake.
+ >  * To run, run the following command:
+ >       * clear && cmake . && make && ./runCode
+ >  * This will clear any previous output from your terminal, compile, and execute the code.
+ > * Once running, simply follow along with user prompts to navigate the Cookbook. 
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
