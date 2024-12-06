@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
-using namespace std;
+using namespace std;        
 
 vector<Recipe*> Parser::CSVparser()
 {
@@ -18,7 +18,7 @@ vector<Recipe*> Parser::CSVparser()
         cerr << "Error opening recipe file" << endl;
     }
 
-    vector<Recipe *> recipeBook;
+    vector<Recipe*> recipeBook;
 
     while (getline(CSVreader, currRecipe))
     {
@@ -127,7 +127,7 @@ vector<Recipe*> Parser::CSVparser()
         rp >> cookTime;
 
         // create a Recipe object from parsed information
-        Recipe *newRecipe = new Recipe(name, ingredientNames, ingredientQuantities, directions, calories, tags, cuisine, foodType, prepTime, cookTime);
+        Recipe*newRecipe = new Recipe(name, ingredientNames, ingredientQuantities, directions, calories, tags, cuisine, foodType, prepTime, cookTime);
         recipeBook.push_back(newRecipe);
         newRecipe->setRecipeID(recipeBook.size());
     }
@@ -137,7 +137,7 @@ vector<Recipe*> Parser::CSVparser()
     return recipeBook;
 }
 
-void Parser::writeToCSV(Recipe *recipe)
+void Parser::writeToCSV(Recipe*recipe)
 {
     ifstream CSVreader("recipes.csv");
     string currentRecipe;
