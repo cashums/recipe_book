@@ -3,6 +3,7 @@
 #include "Book.h"
 #include "User.h"
 #include "dataParser.h"
+#include "RecipeFilter.h"
 
 #include <string>
 #include <iostream>
@@ -18,6 +19,8 @@ private:
     Book book;
     User currentUser;
     bool isRunning;
+    RecipeFilter r;
+
     vector<int> fav_recipe_vec;
     vector<int> search_hist_vec;
     void handleAuthentication();
