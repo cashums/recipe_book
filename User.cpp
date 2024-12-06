@@ -9,6 +9,7 @@
 
 using namespace std;
 
+// Already inside
 User::User(){
     userName = "";
     password = "";

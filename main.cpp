@@ -110,8 +110,8 @@ int main()
 
     cout << "\nAdd new recipe:\n";
     // if you addRecipe . It will write to CSV and Add to current vector
-    // book.addRecipe();      // This function works. its commented so it doesnt run
-    // book.viewAllRecipes(); // works
+    //book.addRecipe();      // This function works. its commented so it doesnt run
+    //book.viewAllRecipes(); // works
 
     return 1;
 }

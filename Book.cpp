@@ -12,7 +12,17 @@ Book::Book()
     currBook = Parser::CSVparser();
 }
 
-vector<Recipe*> Book::getBook()
+Book::~Book()
+{
+    // Free dynamically allocated memory
+    for (Recipe *recipe : currBook)
+    {
+        delete recipe;
+    }
+    currBook.clear(); // Optional, but ensures the vector is empty
+}
+
+vector<Recipe *> Book::getBook()
 {
     return currBook;
 }

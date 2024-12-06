@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// No Destructor Needed
+
 void mainMenu::printTitleScreen() {
     cout << "Welcome to the Coder's Cookbook!\nWould you like to:" << endl << endl;
     cout << "r: Read from a CSV file to create Recipes" << endl;
