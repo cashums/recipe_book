@@ -107,20 +107,6 @@ User* User::logIn() {
     return nullptr;
 }
 
-void User::logOut() {
-    // Implementation for user logout
-}
-
-void User::display(vector<int>& myVec) {
-    // Implementation to display search history
-    if (myVec.empty()) {
-        cout << "Start looking for the recipe of your favorite food!" << endl;
-        return;
-    }
-    for (int i = 0; i < myVec.size(); i++) {
-        // myVec[i].viewRecipe(); // Assuming Recipe has a viewRecipe() method
-    }
-}
 
 void User::addSearchingHist(int &recipeIndex) {
     // Implementation to add to search history
@@ -166,5 +152,13 @@ void User::readVecCSV(){
     inputFile.close();
 }
 void User::writeVecCSV(vector<int>&){
+    ifstream inputFile("users.csv");
+    if (!inputFile.is_open()) {
+        cerr << "Error: Could not open CSV file for reading." << endl;
+        return;
+    }
     
+
+
+    inputFile.close();
 }

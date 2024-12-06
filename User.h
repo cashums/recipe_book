@@ -10,7 +10,6 @@ using namespace std;
 class User{
 public:
     User* logIn();
-    void logOut();
     User* signUp();
 
     void addSearchingHist(int&);
@@ -19,8 +18,6 @@ public:
     void writeVecCSV(vector<int>&);
     // void addFavorRecipe(vector<Recipe>&);
 
-
-    void display(vector<int>&);
     string getUserName() {return userName;}
     string getUserPassword() {return password;}
     bool userExist(const string&, const string& password = "");
