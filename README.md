@@ -1,6 +1,7 @@
 # Recipe Book & Search Engine
  > Authors: [Lydia Niu](https://github.com/LydiaNiu), [Cash Bruce](https://github.com/cashums), [Muhammad Sabeel](https://github.com/MuhammadS04), [Muhammad Ibrahim Abid](https://github.com/Bossmanthing098)
 
+NOTE: This project has been cloned/mirrored from the original (Private) project, and thus, and push/pull dates may be off.
 
 ## Project Description
 >
